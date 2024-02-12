@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "eleutherus_void_mod",
+	"version": "${version}",
+	"name": "Eleutherus_void_mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"SpidX_9226"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/eleutherus_void_mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.spidx.eleutherus_void_mod.Eleutherus_void_mod"
+		],
+		"fabric-datagen": [
+			"com.spidx.eleutherus_void_mod.Eleutherus_void_modDataGenerator"
+		]
+	},
+	"mixins": [
+		"eleutherus_void_mod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.6",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

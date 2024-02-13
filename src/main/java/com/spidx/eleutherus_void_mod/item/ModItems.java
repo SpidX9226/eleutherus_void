@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item ELEUTHERUS = registerItem("eleutherus", new Item(new FabricItemSettings()));
+    public static final Item ELEUTHERUS_PIE = registerItem("eleutherus_pie", new Item(new FabricItemSettings().food(ModFoodComponents.ELEUTHERUS_PIE)));
 
     public static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(Eleutherus_void_mod.MOD_ID, name), item);

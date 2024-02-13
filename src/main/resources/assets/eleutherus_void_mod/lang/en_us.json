@@ -1,7 +1,19 @@
 {
   "item.eleutherus_void_mod.eleutherus": "Eleutherus",
+  "item.eleutherus_void_mod.eleutherus_pie": "Eleutherus pie",
 
   "block.eleutherus_void_mod.eleutherus_block": "Eleutherus block",
+  "block.eleutherus_void_mod.eleutherus_ore": "Eleutherus ore",
 
-  "itemgroup.eleutherus_void": "Eleutherus & void: end"
+  "block.eleutherus_void_mod.eleutherus_planks": "Eleutherus planks",
+  "block.eleutherus_void_mod.eleutherus_slab": "Eleutherus slab",
+  "block.eleutherus_void_mod.eleutherus_stairs": "Eleutherus stairs",
+  "block.eleutherus_void_mod.eleutherus_door": "Eleutherus door",
+  "block.eleutherus_void_mod.eleutherus_trapdoor": "Eleutherus trapdoor",
+  "block.eleutherus_void_mod.eleutherus_fence": "Eleutherus fence",
+  "block.eleutherus_void_mod.eleutherus_fence_gate": "Eleutherus fence gate",
+  "block.eleutherus_void_mod.eleutherus_button": "Eleutherus button",
+  "block.eleutherus_void_mod.eleutherus_pressure_plate": "Eleutherus pressure plate",
+
+  "itemgroup.eleutherus_void": "eleutherus & void: end"
 }

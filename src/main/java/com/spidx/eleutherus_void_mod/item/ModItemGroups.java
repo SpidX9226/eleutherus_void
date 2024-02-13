@@ -19,6 +19,19 @@ public class ModItemGroups {
                         entries.add(ModItems.ELEUTHERUS);
 
                         entries.add(ModBlocks.ELEUTHERUS_BLOCK);
+                        entries.add(ModBlocks.ELEUTHERUS_ORE);
+
+                        entries.add(ModItems.ELEUTHERUS_PIE);
+
+                        entries.add(ModBlocks.ELEUTHERUS_PLANKS);
+                        entries.add(ModBlocks.ELEUTHERUS_SLAB);
+                        entries.add(ModBlocks.ELEUTHERUS_STAIRS);
+                        entries.add(ModBlocks.ELEUTHERUS_DOOR);
+                        entries.add(ModBlocks.ELEUTHERUS_TRAPDOOR);
+                        entries.add(ModBlocks.ELEUTHERUS_FENCE);
+                        entries.add(ModBlocks.ELEUTHERUS_FENCE_GATE);
+                        entries.add(ModBlocks.ELEUTHERUS_BUTTON);
+                        entries.add(ModBlocks.ELEUTHERUS_PRESSURE_PLATE);
                     }).build());
     public static void registerItemGroups(){
         Eleutherus_void_mod.LOGGER.info("Registering Item Groups for " + Eleutherus_void_mod.MOD_ID);

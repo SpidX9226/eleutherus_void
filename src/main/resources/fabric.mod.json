@@ -18,6 +18,9 @@
 		"main": [
 			"com.spidx.eleutherus_void_mod.Eleutherus_void_mod"
 		],
+		"client": [
+			"com.spidx.eleutherus_void_mod.Eleutherus_void_modClient"
+		],
 		"fabric-datagen": [
 			"com.spidx.eleutherus_void_mod.Eleutherus_void_modDataGenerator"
 		]

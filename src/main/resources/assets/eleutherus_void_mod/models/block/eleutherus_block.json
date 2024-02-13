@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures" :{
-    "all": "eleutherus_void_mod:block/eleutherus_block"
-  }
-}

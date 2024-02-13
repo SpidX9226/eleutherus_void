@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "*": {
+      "item": "eleutherus_void_mod:eleutherus"
+    },
+    "+": {
+      "item": "minecraft:pumpkin_pie"
+    },
+    "-": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "-*-",
+    "*+*",
+    "-*-"
+  ],
+  "result": {
+    "item": "eleutherus_void_mod:eleutherus_pie"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left",
+  "textures": {
+    "bottom": "eleutherus_void_mod:block/eleutherus_door_bottom",
+    "top": "eleutherus_void_mod:block/eleutherus_door_top"
+  }
+}

@@ -1,0 +1,7 @@
+// 1.20.4	2024-02-13T18:26:39.0503548	Eleutherus_void_mod/Tags for minecraft:block
+8c7e10eb640a24321ca7c3398928f81c7a88909f data\minecraft\tags\blocks\mineable\pickaxe.json
+eead13fb00db370fa49d3f84255dc0e7865cf24b data\minecraft\tags\blocks\planks.json
+8c7e10eb640a24321ca7c3398928f81c7a88909f data\fabric\tags\blocks\needs_tool_level_4.json
+7bd6aee7ab41f8d2acee6188afbaf5c030230c76 data\minecraft\tags\blocks\fences.json
+6c6065b85835301d13b19cdc01add4208b28814a data\minecraft\tags\blocks\beacon_base_blocks.json
+49e0f301700e3abbec5d6b8105578953020f0c5c data\minecraft\tags\blocks\fence_gates.json

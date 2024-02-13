@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_up",
+  "textures": {
+    "texture": "eleutherus_void_mod:block/eleutherus_planks"
+  }
+}

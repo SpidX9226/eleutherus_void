@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "eleutherus_void_mod:block/eleutherus_log",
+    "side": "eleutherus_void_mod:block/eleutherus_log"
+  }
+}

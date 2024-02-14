@@ -15,5 +15,24 @@
   "block.eleutherus_void_mod.eleutherus_button": "Eleutherus button",
   "block.eleutherus_void_mod.eleutherus_pressure_plate": "Eleutherus pressure plate",
 
+  "item.eleutherus_void_mod.eleutherus_pickaxe": "Eleutherus pickaxe",
+  "item.eleutherus_void_mod.eleutherus_sword": "Eleutherus sword",
+  "item.eleutherus_void_mod.eleutherus_axe": "Eleutherus axe",
+  "item.eleutherus_void_mod.eleutherus_shovel": "Eleutherus shovel",
+  "item.eleutherus_void_mod.eleutherus_hoe": "Eleutherus hoe",
+  "item.eleutherus_void_mod.eleutherus_helmet": "Eleutherus helmet",
+  "item.eleutherus_void_mod.eleutherus_chestplate": "Eleutherus chestplate",
+  "item.eleutherus_void_mod.eleutherus_leggings": "Eleutherus leggings",
+  "item.eleutherus_void_mod.eleutherus_boots": "Eleutherus boots",
+
+  "block.eleutherus_void_mod.eleutherus_log": "Eleutherus log",
+  "block.eleutherus_void_mod.eleutherus_stripped_log": "Eleutherus stripped log",
+  "block.eleutherus_void_mod.eleutherus_wood": "Eleutherus wood",
+  "block.eleutherus_void_mod.eleutherus_stripped_wood": "Eleutherus stripped wood",
+  "block.eleutherus_void_mod.eleutherus_wart": "Eleutherus wart",
+
+
+  "item.eleutherus_void_mod.void_destroyer_blade": "Void destroyer blade",
+
   "itemgroup.eleutherus_void": "eleutherus & void: end"
 }

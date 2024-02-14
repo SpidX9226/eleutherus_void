@@ -3,6 +3,7 @@ package com.spidx.eleutherus_void_mod;
 import com.spidx.eleutherus_void_mod.block.ModBlocks;
 import com.spidx.eleutherus_void_mod.item.ModItemGroups;
 import com.spidx.eleutherus_void_mod.item.ModItems;
+import com.spidx.eleutherus_void_mod.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -19,5 +20,6 @@ public class Eleutherus_void_mod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModLootTableModifiers.modifyLootTables();
 	}
 }

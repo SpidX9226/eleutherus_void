@@ -1,6 +1,7 @@
 package com.spidx.eleutherus_void_mod.block;
 
 import com.spidx.eleutherus_void_mod.Eleutherus_void_mod;
+import com.spidx.eleutherus_void_mod.block.custom.Eleutherus_wart_block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -42,6 +43,20 @@ public class ModBlocks {
 
     public static final Block ELEUTHERUS_TRAPDOOR = registerBlock("eleutherus_trapdoor",
             new TrapdoorBlock(BlockSetType.WARPED, FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).nonOpaque().lightLevel(s -> 5)));
+
+    public static final Block ELEUTHERUS_LOG = registerBlock("eleutherus_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.WARPED_STEM).nonOpaque().lightLevel(s -> 5)));
+    public static final Block ELEUTHERUS_WOOD = registerBlock("eleutherus_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.WARPED_STEM).nonOpaque().lightLevel(s -> 5)));
+    public static final Block STRIPPED_ELEUTHERUS_LOG = registerBlock("stripped_eleutherus_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_WARPED_STEM).nonOpaque().lightLevel(s -> 5)));
+    public static final Block STRIPPED_ELEUTHERUS_WOOD = registerBlock("stripped_eleutherus_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_WARPED_STEM).nonOpaque().lightLevel(s -> 5)));
+
+    public static final Block ELEUTHERUS_WART = registerBlock("eleutherus_wart",
+            new Eleutherus_wart_block(FabricBlockSettings.copyOf(Blocks.WARPED_WART_BLOCK).nonOpaque().lightLevel(s -> 5)));
+
+
 
     private static Block registerBlock(String name, Block block){
         RegisterBlockItem(name, block);

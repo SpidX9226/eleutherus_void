@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -29,11 +30,26 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerDoor(ModBlocks.ELEUTHERUS_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.ELEUTHERUS_TRAPDOOR);
 
+        blockStateModelGenerator.registerLog(ModBlocks.ELEUTHERUS_LOG).log(ModBlocks.ELEUTHERUS_LOG).wood(ModBlocks.ELEUTHERUS_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ELEUTHERUS_LOG).log(ModBlocks.STRIPPED_ELEUTHERUS_LOG).wood(ModBlocks.STRIPPED_ELEUTHERUS_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ELEUTHERUS_WART);
+
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.ELEUTHERUS, Models.GENERATED);
         itemModelGenerator.register(ModItems.ELEUTHERUS_PIE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.ELEUTHERUS_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ELEUTHERUS_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ELEUTHERUS_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ELEUTHERUS_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ELEUTHERUS_HOE, Models.HANDHELD);
+
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_BOOTS));
     }
 }

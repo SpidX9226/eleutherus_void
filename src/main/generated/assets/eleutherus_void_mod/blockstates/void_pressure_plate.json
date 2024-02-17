@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "eleutherus_void_mod:block/void_pressure_plate"
+    },
+    "powered=true": {
+      "model": "eleutherus_void_mod:block/void_pressure_plate_down"
+    }
+  }
+}

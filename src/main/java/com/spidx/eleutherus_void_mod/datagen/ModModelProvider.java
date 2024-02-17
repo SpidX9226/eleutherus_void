@@ -50,12 +50,16 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.VOID_LEAVES);
 
         voidPool.family(ModBlocks.VOID_FAMILY);
+        eleutherusPool.family(ModBlocks.ELEUTHERUS_FAMILY);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.ELEUTHERUS, Models.GENERATED);
         itemModelGenerator.register(ModItems.ELEUTHERUS_PIE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ELEUTHERUS_DUST, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_DUST, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ELEUTHERUS_SMITHING_UPGRADE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.ELEUTHERUS_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ELEUTHERUS_SWORD, Models.HANDHELD);

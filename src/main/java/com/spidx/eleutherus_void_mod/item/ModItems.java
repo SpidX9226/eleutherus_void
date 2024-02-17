@@ -13,6 +13,16 @@ import net.minecraft.util.Rarity;
 public class ModItems {
     public static final Item ELEUTHERUS = registerItem("eleutherus",
             new Item(new FabricItemSettings()));
+
+    public static final Item ELEUTHERUS_DUST = registerItem("eleutherus_dust",
+            new Item(new FabricItemSettings()));
+
+    public static final Item COPPER_DUST = registerItem("copper_dust",
+            new Item(new FabricItemSettings()));
+
+    public static final Item ELEUTHERUS_SMITHING_UPGRADE  = registerItem("eleutherus_smithing_update",
+            new Item(new FabricItemSettings()));
+
     public static final Item ELEUTHERUS_PIE = registerItem("eleutherus_pie",
             new Item(new FabricItemSettings().food(ModFoodComponents.ELEUTHERUS_PIE)));
 
@@ -47,6 +57,11 @@ public class ModItems {
             new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.STANDING_VOID_SIGN, ModBlocks.WALL_VOID_SIGN));
     public static final Item HANGING_VOID_SIGN = registerItem("void_hanging_sign",
             new HangingSignItem(ModBlocks.HANGING_VOID_SIGN, ModBlocks.WALL_HANGING_VOID_SIGN, new FabricItemSettings().maxCount(16)));
+
+    public static final Item ELEUTHERUS_SIGN = registerItem("eleutherus_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.STANDING_ELEUTHERUS_SIGN, ModBlocks.WALL_ELEUTHERUS_SIGN));
+    public static final Item HANGING_ELEUTHERUS_SIGN = registerItem("eleutherus_hanging_sign",
+            new HangingSignItem(ModBlocks.HANGING_ELEUTHERUS_SIGN, ModBlocks.WALL_HANGING_ELEUTHERUS_SIGN, new FabricItemSettings().maxCount(16)));
 
     public static final Item VOID_DESTROYER_BLADE = registerItem("void_destroyer_blade",
             new PickaxeItem(ModToolMaterial.VOID, 3, 3f, new FabricItemSettings().rarity(Rarity.EPIC)));

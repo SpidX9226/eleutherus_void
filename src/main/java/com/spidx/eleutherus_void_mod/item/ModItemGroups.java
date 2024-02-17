@@ -29,6 +29,9 @@ public class ModItemGroups {
                         entries.add(ModItems.ELEUTHERUS_BOOTS);
 
 
+                        entries.add(ModItems.ELEUTHERUS_DUST);
+                        entries.add(ModItems.ELEUTHERUS_SMITHING_UPGRADE);
+                        entries.add(ModItems.COPPER_DUST);
                         entries.add(ModItems.ELEUTHERUS_PIE);
 
                         entries.add(ModBlocks.ELEUTHERUS_LOG);
@@ -45,7 +48,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.ELEUTHERUS_BUTTON);
                         entries.add(ModBlocks.ELEUTHERUS_PRESSURE_PLATE);
 
-
+                        entries.add(ModItems.ELEUTHERUS_SIGN);
+                        entries.add(ModItems.HANGING_ELEUTHERUS_SIGN);
 
                         entries.add(ModBlocks.VOID_LOG);
                         entries.add(ModBlocks.VOID_WOOD);

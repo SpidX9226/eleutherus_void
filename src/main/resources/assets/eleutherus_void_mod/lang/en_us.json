@@ -1,5 +1,9 @@
 {
   "item.eleutherus_void_mod.eleutherus": "Eleutherus",
+
+  "item.eleutherus_void_mod.eleutherus_dust": "Eleutherus dust",
+  "item.eleutherus_void_mod.copper_dust": "Copper dust",
+  "item.eleutherus_void_mod.eleutherus_smithing_update": "Eleutherus smithing update",
   "item.eleutherus_void_mod.eleutherus_pie": "Eleutherus pie",
 
   "block.eleutherus_void_mod.eleutherus_block": "Eleutherus block",
@@ -36,6 +40,21 @@
   "block.eleutherus_void_mod.void_wood": "Void wood",
   "block.eleutherus_void_mod.stripped_void_wood": "Void stripped wood",
   "block.eleutherus_void_mod.void_leaves": "Void leaves",
+
+  "block.eleutherus_void_mod.void_slab": "Void slab",
+  "block.eleutherus_void_mod.void_stairs": "Void stairs",
+  "block.eleutherus_void_mod.void_door": "Void door",
+  "block.eleutherus_void_mod.void_trapdoor": "Void trapdoor",
+  "block.eleutherus_void_mod.void_fence": "Void fence",
+  "block.eleutherus_void_mod.void_fence_gate": "Void fence gate",
+  "block.eleutherus_void_mod.void_button": "Void button",
+  "block.eleutherus_void_mod.void_pressure_plate": "Void pressure plate",
+
+  "block.eleutherus_void_mod.void_standing_sign": "Void sign",
+  "block.eleutherus_void_mod.void_hanging_sign": "Void hanging sign",
+
+  "block.eleutherus_void_mod.eleutherus_standing_sign": "Void sign",
+  "block.eleutherus_void_mod.eleutherus_hanging_sign": "Void hanging sign",
 
   "block.eleutherus_void_mod.void_planks": "Void planks",
 

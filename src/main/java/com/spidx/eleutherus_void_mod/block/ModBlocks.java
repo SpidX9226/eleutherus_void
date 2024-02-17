@@ -109,10 +109,27 @@ public class ModBlocks {
     public static final Block HANGING_VOID_SIGN = Registry.register(Registries.BLOCK, new Identifier(Eleutherus_void_mod.MOD_ID, "void_hanging_sign"),
             new TerraformHangingSignBlock(VOID_HANGING_SIGN_TEXTURE,VOID_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHERRY_HANGING_SIGN)));
     public static final Block WALL_HANGING_VOID_SIGN = Registry.register(Registries.BLOCK, new Identifier(Eleutherus_void_mod.MOD_ID, "void_wall_hanging_sign"),
-            new TerraformWallHangingSignBlock(VOID_HANGING_SIGN_TEXTURE,VOID_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHERRY_HANGING_SIGN)));
+            new TerraformWallHangingSignBlock(VOID_HANGING_SIGN_TEXTURE,VOID_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.CHERRY_WALL_HANGING_SIGN)));
 
-    public static final BlockFamily VOID_FAMILY = BlockFamilies.register(ModBlocks.ELEUTHERUS_PLANKS)
+    public static final Identifier ELEUTHERUS_SIGN_TEXTURE = new Identifier(Eleutherus_void_mod.MOD_ID, "entity/signs/eleutherus");
+    public static final Identifier ELEUTHERUS_HANGING_SIGN_TEXTURE = new Identifier(Eleutherus_void_mod.MOD_ID, "entity/signs/hanging/eleutherus");
+    public static final Identifier ELEUTHERUS_HANGING_GUI_SIGN_TEXTURE = new Identifier(Eleutherus_void_mod.MOD_ID, "textures/gui/hanging_signs/eleutherus");
+
+    public static final Block STANDING_ELEUTHERUS_SIGN = Registry.register(Registries.BLOCK, new Identifier(Eleutherus_void_mod.MOD_ID, "eleutherus_standing_sign"),
+            new TerraformSignBlock(ELEUTHERUS_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.WARPED_SIGN)));
+    public static final Block WALL_ELEUTHERUS_SIGN = Registry.register(Registries.BLOCK, new Identifier(Eleutherus_void_mod.MOD_ID, "eleutherus_wall_sign"),
+            new TerraformWallSignBlock(ELEUTHERUS_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.WARPED_WALL_SIGN)));
+    public static final Block HANGING_ELEUTHERUS_SIGN = Registry.register(Registries.BLOCK, new Identifier(Eleutherus_void_mod.MOD_ID, "eleutherus_hanging_sign"),
+            new TerraformHangingSignBlock(ELEUTHERUS_HANGING_SIGN_TEXTURE,ELEUTHERUS_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.WARPED_HANGING_SIGN)));
+    public static final Block WALL_HANGING_ELEUTHERUS_SIGN = Registry.register(Registries.BLOCK, new Identifier(Eleutherus_void_mod.MOD_ID, "eleutherus_wall_hanging_sign"),
+            new TerraformWallHangingSignBlock(ELEUTHERUS_HANGING_SIGN_TEXTURE,ELEUTHERUS_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.WARPED_WALL_HANGING_SIGN)));
+
+    public static final BlockFamily VOID_FAMILY = BlockFamilies.register(ModBlocks.VOID_PLANKS)
             .sign(ModBlocks.STANDING_VOID_SIGN, ModBlocks.WALL_VOID_SIGN)
+            .group("wooden").unlockCriterionName("has_planks").build();
+
+    public static final BlockFamily ELEUTHERUS_FAMILY = BlockFamilies.register(ModBlocks.ELEUTHERUS_PLANKS)
+            .sign(ModBlocks.STANDING_ELEUTHERUS_SIGN, ModBlocks.WALL_ELEUTHERUS_SIGN)
             .group("wooden").unlockCriterionName("has_planks").build();
 
     private static Block registerBlock(String name, Block block){

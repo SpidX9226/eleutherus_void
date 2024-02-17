@@ -17,6 +17,8 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         BlockStateModelGenerator.BlockTexturePool eleutherusPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.ELEUTHERUS_PLANKS);
+        BlockStateModelGenerator.BlockTexturePool voidPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.VOID_PLANKS);
+
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ELEUTHERUS_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ELEUTHERUS_BLOCK);
 
@@ -30,10 +32,24 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerDoor(ModBlocks.ELEUTHERUS_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.ELEUTHERUS_TRAPDOOR);
 
+        voidPool.stairs(ModBlocks.VOID_STAIRS);
+        voidPool.slab(ModBlocks.VOID_SLAB);
+        voidPool.button(ModBlocks.VOID_BUTTON);
+        voidPool.fence(ModBlocks.VOID_FENCE);
+        voidPool.fenceGate(ModBlocks.VOID_FENCE_GATE);
+        voidPool.pressurePlate(ModBlocks.VOID_PRESSURE_PLATE);
+
+        blockStateModelGenerator.registerDoor(ModBlocks.VOID_DOOR);
+
         blockStateModelGenerator.registerLog(ModBlocks.ELEUTHERUS_LOG).log(ModBlocks.ELEUTHERUS_LOG).wood(ModBlocks.ELEUTHERUS_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ELEUTHERUS_LOG).log(ModBlocks.STRIPPED_ELEUTHERUS_LOG).wood(ModBlocks.STRIPPED_ELEUTHERUS_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ELEUTHERUS_WART);
 
+        blockStateModelGenerator.registerLog(ModBlocks.VOID_LOG).log(ModBlocks.VOID_LOG).wood(ModBlocks.VOID_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_VOID_LOG).log(ModBlocks.STRIPPED_VOID_LOG).wood(ModBlocks.STRIPPED_VOID_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.VOID_LEAVES);
+
+        voidPool.family(ModBlocks.VOID_FAMILY);
     }
 
     @Override

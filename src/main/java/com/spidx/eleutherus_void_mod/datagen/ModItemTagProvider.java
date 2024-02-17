@@ -23,9 +23,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.ELEUTHERUS_BOOTS);
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
-                .add(ModBlocks.ELEUTHERUS_PLANKS.asItem());
+                .add(ModBlocks.ELEUTHERUS_PLANKS.asItem())
+                .add(ModBlocks.VOID_PLANKS.asItem());
 
         getOrCreateTagBuilder(ItemTags.BEACON_PAYMENT_ITEMS)
                 .add(ModItems.ELEUTHERUS);
+
     }
 }

@@ -26,10 +26,18 @@
   "item.eleutherus_void_mod.eleutherus_boots": "Eleutherus boots",
 
   "block.eleutherus_void_mod.eleutherus_log": "Eleutherus log",
-  "block.eleutherus_void_mod.eleutherus_stripped_log": "Eleutherus stripped log",
+  "block.eleutherus_void_mod.stripped_eleutherus_log": "Eleutherus stripped log",
   "block.eleutherus_void_mod.eleutherus_wood": "Eleutherus wood",
-  "block.eleutherus_void_mod.eleutherus_stripped_wood": "Eleutherus stripped wood",
+  "block.eleutherus_void_mod.stripped_eleutherus_wood": "Eleutherus stripped wood",
   "block.eleutherus_void_mod.eleutherus_wart": "Eleutherus wart",
+
+  "block.eleutherus_void_mod.void_log": "Void log",
+  "block.eleutherus_void_mod.stripped_void_log": "Void stripped log",
+  "block.eleutherus_void_mod.void_wood": "Void wood",
+  "block.eleutherus_void_mod.stripped_void_wood": "Void stripped wood",
+  "block.eleutherus_void_mod.void_leaves": "Void leaves",
+
+  "block.eleutherus_void_mod.void_planks": "Void planks",
 
 
   "item.eleutherus_void_mod.void_destroyer_blade": "Void destroyer blade",

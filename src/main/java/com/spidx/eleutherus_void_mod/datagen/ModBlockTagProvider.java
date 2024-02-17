@@ -30,10 +30,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ELEUTHERUS_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.PLANKS)
-                .add(ModBlocks.ELEUTHERUS_PLANKS);
+                .add(ModBlocks.ELEUTHERUS_PLANKS)
+                .add(ModBlocks.VOID_PLANKS);
+
         getOrCreateTagBuilder(BlockTags.FENCES)
-                .add(ModBlocks.ELEUTHERUS_FENCE);
+                .add(ModBlocks.ELEUTHERUS_FENCE)
+                .add(ModBlocks.VOID_FENCE);
+
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
-                .add(ModBlocks.ELEUTHERUS_FENCE_GATE);
+                .add(ModBlocks.ELEUTHERUS_FENCE_GATE)
+                .add(ModBlocks.VOID_FENCE_GATE);
     }
 }

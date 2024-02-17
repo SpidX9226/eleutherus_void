@@ -45,6 +45,27 @@ public class ModItemGroups {
                         entries.add(ModBlocks.ELEUTHERUS_BUTTON);
                         entries.add(ModBlocks.ELEUTHERUS_PRESSURE_PLATE);
 
+
+
+                        entries.add(ModBlocks.VOID_LOG);
+                        entries.add(ModBlocks.VOID_WOOD);
+                        entries.add(ModBlocks.STRIPPED_VOID_LOG);
+                        entries.add(ModBlocks.STRIPPED_VOID_WOOD);
+                        entries.add(ModBlocks.VOID_LEAVES);
+
+                        entries.add(ModBlocks.VOID_PLANKS);
+                        entries.add(ModBlocks.VOID_SLAB);
+                        entries.add(ModBlocks.VOID_STAIRS);
+                        entries.add(ModBlocks.VOID_DOOR);
+                        entries.add(ModBlocks.VOID_TRAPDOOR);
+                        entries.add(ModBlocks.VOID_FENCE);
+                        entries.add(ModBlocks.VOID_FENCE_GATE);
+                        entries.add(ModBlocks.VOID_BUTTON);
+                        entries.add(ModBlocks.VOID_PRESSURE_PLATE);
+
+                        entries.add(ModItems.VOID_SIGN);
+                        entries.add(ModItems.HANGING_VOID_SIGN);
+
                         entries.add(ModItems.VOID_DESTROYER_BLADE);
 
                     }).build());

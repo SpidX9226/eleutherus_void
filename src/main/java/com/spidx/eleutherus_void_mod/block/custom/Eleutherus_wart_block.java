@@ -41,4 +41,3 @@ public class Eleutherus_wart_block extends Block {
         world.addParticle(ParticleTypes.DRIPPING_OBSIDIAN_TEAR, (double)pos.getX() + d, (double)pos.getY() + e, (double)pos.getZ() + f, 0.0, 0.0, 0.0);
     }
 }
-

@@ -1,6 +1,7 @@
 package com.spidx.eleutherus_void_mod.item;
 
 import com.spidx.eleutherus_void_mod.Eleutherus_void_mod;
+import com.spidx.eleutherus_void_mod.block.ModBlocks;
 import com.spidx.eleutherus_void_mod.item.custom.ModArmorItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
@@ -14,20 +15,21 @@ public class ModItems {
             new Item(new FabricItemSettings()));
     public static final Item ELEUTHERUS_PIE = registerItem("eleutherus_pie",
             new Item(new FabricItemSettings().food(ModFoodComponents.ELEUTHERUS_PIE)));
+
     public static final Item ELEUTHERUS_PICKAXE = registerItem("eleutherus_pickaxe",
-            new PickaxeItem(ModToolMaterial.ELEUTHERUS, 3, 3f, new FabricItemSettings()));
+            new PickaxeItem(ModToolMaterial.ELEUTHERUS, 2, -2.6f, new FabricItemSettings()));
 
     public static final Item ELEUTHERUS_SWORD = registerItem("eleutherus_sword",
-            new SwordItem(ModToolMaterial.ELEUTHERUS, 3, 3f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterial.ELEUTHERUS, 3, -2.2f, new FabricItemSettings()));
 
     public static final Item ELEUTHERUS_AXE = registerItem("eleutherus_axe",
-            new AxeItem(ModToolMaterial.ELEUTHERUS, 3, 3f, new FabricItemSettings()));
+            new AxeItem(ModToolMaterial.ELEUTHERUS, 5, -2.8f, new FabricItemSettings()));
 
     public static final Item ELEUTHERUS_SHOVEL = registerItem("eleutherus_shovel",
-            new ShovelItem(ModToolMaterial.ELEUTHERUS, 3, 3f, new FabricItemSettings()));
+            new ShovelItem(ModToolMaterial.ELEUTHERUS, 2, -2.8f, new FabricItemSettings()));
 
     public static final Item ELEUTHERUS_HOE = registerItem("eleutherus_hoe",
-            new HoeItem(ModToolMaterial.ELEUTHERUS, 3, 3f, new FabricItemSettings()));
+            new HoeItem(ModToolMaterial.ELEUTHERUS, -3, 0.2f, new FabricItemSettings()));
 
     public static final Item ELEUTHERUS_HELMET = registerItem("eleutherus_helmet",
             new ModArmorItem(ModArmorMaterials.ELEUTHERUS, ArmorItem.Type.HELMET, new FabricItemSettings()));
@@ -40,6 +42,11 @@ public class ModItems {
 
     public static final Item ELEUTHERUS_BOOTS = registerItem("eleutherus_boots",
             new ModArmorItem(ModArmorMaterials.ELEUTHERUS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
+    public static final Item VOID_SIGN = registerItem("void_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.STANDING_VOID_SIGN, ModBlocks.WALL_VOID_SIGN));
+    public static final Item HANGING_VOID_SIGN = registerItem("void_hanging_sign",
+            new HangingSignItem(ModBlocks.HANGING_VOID_SIGN, ModBlocks.WALL_HANGING_VOID_SIGN, new FabricItemSettings().maxCount(16)));
 
     public static final Item VOID_DESTROYER_BLADE = registerItem("void_destroyer_blade",
             new PickaxeItem(ModToolMaterial.VOID, 3, 3f, new FabricItemSettings().rarity(Rarity.EPIC)));

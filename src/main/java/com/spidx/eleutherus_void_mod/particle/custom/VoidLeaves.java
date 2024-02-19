@@ -4,6 +4,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.particle.DefaultParticleType;
+import org.jetbrains.annotations.Nullable;
 
 @Environment(value= EnvType.CLIENT)
 public class VoidLeaves extends SpriteBillboardParticle {
@@ -18,7 +20,7 @@ public class VoidLeaves extends SpriteBillboardParticle {
     private final float field_43370;
     private final float field_43371;
 
-    protected VoidLeaves(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider) {
+    public VoidLeaves(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider, double velocityX, double velocityY, double velocityZ) {
         super(world, x, y, z);
         float f;
         this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
@@ -69,4 +71,21 @@ public class VoidLeaves extends SpriteBillboardParticle {
         this.velocityY *= (double)this.velocityMultiplier;
         this.velocityZ *= (double)this.velocityMultiplier;
     }
+
+    @Environment(EnvType.CLIENT)
+    public static class Factory implements ParticleFactory<DefaultParticleType>{
+
+        private final SpriteProvider sprites;
+
+        public Factory(SpriteProvider spriteSet){
+            this.sprites = spriteSet;
+        }
+
+        @Nullable
+        @Override
+        public Particle createParticle(DefaultParticleType parameters, ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
+            return new VoidLeaves(world, x, y, z, this.sprites, velocityX, velocityY, velocityZ);
+        }
+    }
+
 }

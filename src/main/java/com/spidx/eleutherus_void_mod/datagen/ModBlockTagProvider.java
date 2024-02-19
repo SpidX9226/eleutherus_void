@@ -18,16 +18,26 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
+        getOrCreateTagBuilder(BlockTags.DIRT)
+                .add(ModBlocks.VOID_SAND);
+
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.ELEUTHERUS_ORE)
-                .add(ModBlocks.ELEUTHERUS_BLOCK);
+                .add(ModBlocks.ELEUTHERUS_BLOCK)
+                .add(ModBlocks.RANDOM_ORE_BLOCK);
 
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
                 .add(ModBlocks.ELEUTHERUS_ORE)
                 .add(ModBlocks.ELEUTHERUS_BLOCK);
 
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
+                .add(ModBlocks.RANDOM_ORE_BLOCK);
+
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
                 .add(ModBlocks.ELEUTHERUS_BLOCK);
+
+        getOrCreateTagBuilder(BlockTags.LOGS)
+                .add(ModBlocks.VOID_LOG);
 
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(ModBlocks.ELEUTHERUS_PLANKS)

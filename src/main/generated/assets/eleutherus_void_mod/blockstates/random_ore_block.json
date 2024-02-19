@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "eleutherus_void_mod:block/random_ore_block"
+    }
+  }
+}

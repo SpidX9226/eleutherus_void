@@ -20,6 +20,7 @@ public class ModModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool voidPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.VOID_PLANKS);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ELEUTHERUS_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RANDOM_ORE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ELEUTHERUS_BLOCK);
 
         eleutherusPool.stairs(ModBlocks.ELEUTHERUS_STAIRS);
@@ -49,8 +50,12 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_VOID_LOG).log(ModBlocks.STRIPPED_VOID_LOG).wood(ModBlocks.STRIPPED_VOID_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.VOID_LEAVES);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.VOID_SAND);
+
         voidPool.family(ModBlocks.VOID_FAMILY);
         eleutherusPool.family(ModBlocks.ELEUTHERUS_FAMILY);
+
+        blockStateModelGenerator.registerTintableCross(ModBlocks.VOID_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override

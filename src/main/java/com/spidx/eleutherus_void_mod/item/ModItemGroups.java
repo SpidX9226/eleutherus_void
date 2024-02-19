@@ -70,7 +70,13 @@ public class ModItemGroups {
                         entries.add(ModItems.VOID_SIGN);
                         entries.add(ModItems.HANGING_VOID_SIGN);
 
+                        entries.add(ModBlocks.RANDOM_ORE_BLOCK);
+
+                        entries.add(ModBlocks.VOID_SAPLING);
+                        entries.add(ModBlocks.VOID_SAND);
+
                         entries.add(ModItems.VOID_DESTROYER_BLADE);
+                        entries.add(ModItems.VOID_REAVER_FLAMBERGE);
 
                     }).build());
     public static void registerItemGroups(){

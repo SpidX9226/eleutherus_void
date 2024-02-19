@@ -1,16 +1,19 @@
 package com.spidx.eleutherus_void_mod;
 
 import com.spidx.eleutherus_void_mod.block.ModBlocks;
+import com.spidx.eleutherus_void_mod.datagen.ModWorldGenerator;
 import com.spidx.eleutherus_void_mod.enchantments.ModEnchantments;
 import com.spidx.eleutherus_void_mod.enchantments.VoidSharpnessEnchantment;
 import com.spidx.eleutherus_void_mod.item.ModItemGroups;
 import com.spidx.eleutherus_void_mod.item.ModItems;
 import com.spidx.eleutherus_void_mod.particle.ModParticles;
 import com.spidx.eleutherus_void_mod.util.ModLootTableModifiers;
+import com.spidx.eleutherus_void_mod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -36,5 +39,7 @@ public class Eleutherus_void_mod implements ModInitializer {
 		ModLootTableModifiers.modifyLootTables();
 		ModEnchantments.registerModEnchantments();
 		ModParticles.registerParticles();
+
+		ModWorldGeneration.generateModWorldGen();
 	}
 }

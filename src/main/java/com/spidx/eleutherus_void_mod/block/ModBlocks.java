@@ -2,6 +2,8 @@ package com.spidx.eleutherus_void_mod.block;
 
 import com.spidx.eleutherus_void_mod.Eleutherus_void_mod;
 import com.spidx.eleutherus_void_mod.block.custom.Eleutherus_wart_block;
+import com.spidx.eleutherus_void_mod.block.custom.VoidLeavesBlock;
+import com.spidx.eleutherus_void_mod.world.tree.ModSaplingGenerators;
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
@@ -28,6 +30,9 @@ public class ModBlocks {
             new ExperienceDroppingBlock(UniformIntProvider.create(6, 8), FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).lightLevel(s -> 5).sounds(BlockSoundGroup.STONE)));
     public static final Block ELEUTHERUS_PLANKS = registerBlock("eleutherus_planks",
             new Block(FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).lightLevel(s -> 5)));
+
+    public static final Block RANDOM_ORE_BLOCK = registerBlock("random_ore_block",
+            new ExperienceDroppingBlock(UniformIntProvider.create(10, 12), FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).lightLevel(s -> 5).sounds(BlockSoundGroup.STONE)));
 
     public static final Block ELEUTHERUS_STAIRS = registerBlock("eleutherus_stairs",
             new StairsBlock(ModBlocks.ELEUTHERUS_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).lightLevel(s -> 5)));
@@ -71,11 +76,17 @@ public class ModBlocks {
     public static final Block STRIPPED_VOID_WOOD = registerBlock("stripped_void_wood",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CHERRY_WOOD).lightLevel(s -> 1)));
 
+    public static final Block VOID_SAPLING = registerBlock("void_sapling",
+            new SaplingBlock(ModSaplingGenerators.VOID, FabricBlockSettings.copyOf(Blocks.CHERRY_SAPLING)));
+
     public static final Block VOID_PLANKS = registerBlock("void_planks",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_LOG).lightLevel(s -> 5)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));
+
+    public static final Block VOID_SAND = registerBlock("void_sand",
+            new SoulSandBlock(FabricBlockSettings.copyOf(Blocks.SOUL_SOIL).lightLevel(s -> 5)));
 
     public static final Block VOID_LEAVES = registerBlock("void_leaves",
-            new LeavesBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_LEAVES).nonOpaque().lightLevel(s -> 5).nonOpaque()));
+            new VoidLeavesBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_LEAVES).nonOpaque().lightLevel(s -> 5).nonOpaque()));
 
     public static final Block VOID_STAIRS = registerBlock("void_stairs",
             new StairsBlock(ModBlocks.VOID_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));

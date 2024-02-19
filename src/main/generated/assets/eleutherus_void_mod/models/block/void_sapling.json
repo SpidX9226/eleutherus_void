@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "eleutherus_void_mod:block/void_sapling"
+  }
+}

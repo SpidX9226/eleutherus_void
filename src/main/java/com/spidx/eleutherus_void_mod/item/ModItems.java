@@ -64,7 +64,10 @@ public class ModItems {
             new HangingSignItem(ModBlocks.HANGING_ELEUTHERUS_SIGN, ModBlocks.WALL_HANGING_ELEUTHERUS_SIGN, new FabricItemSettings().maxCount(16)));
 
     public static final Item VOID_DESTROYER_BLADE = registerItem("void_destroyer_blade",
-            new PickaxeItem(ModToolMaterial.VOID, 3, 3f, new FabricItemSettings().rarity(Rarity.EPIC)));
+            new PickaxeItem(ModToolMaterial.VOID, 3, -2f, new FabricItemSettings().rarity(Rarity.EPIC)));
+
+    public static final Item VOID_REAVER_FLAMBERGE = registerItem("void_reaver_flamberge",
+            new PickaxeItem(ModToolMaterial.VOID, 5, -2.2f, new FabricItemSettings().rarity(Rarity.EPIC)));
 
     public static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, new Identifier(Eleutherus_void_mod.MOD_ID, name), item);

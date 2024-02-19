@@ -1,6 +1,7 @@
 package com.spidx.eleutherus_void_mod.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import com.spidx.eleutherus_void_mod.particle.ModParticles;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
@@ -33,7 +34,7 @@ public class VoidLeavesBlock extends LeavesBlock {
         if (VoidLeavesBlock.isFaceFullSquare(blockState.getCollisionShape(world, blockPos), Direction.UP)) {
             return;
         }
-        ParticleUtil.spawnParticle(world, pos, random, ParticleTypes.CHERRY_LEAVES);
+        ParticleUtil.spawnParticle(world, pos, random, ModParticles.VOID_LEAVES_PARTICLE);
     }
 }
 

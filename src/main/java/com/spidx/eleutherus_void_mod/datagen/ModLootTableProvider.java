@@ -4,6 +4,7 @@ import com.spidx.eleutherus_void_mod.block.ModBlocks;
 import com.spidx.eleutherus_void_mod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Block;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public ModLootTableProvider(FabricDataOutput dataOutput) {
@@ -47,7 +48,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.VOID_WOOD);
         addDrop(ModBlocks.STRIPPED_VOID_LOG);
         addDrop(ModBlocks.STRIPPED_VOID_WOOD);
+        addDrop(ModBlocks.VOID_SAPLING);
+        addDrop(ModBlocks.VOID_SAND);
 
-        addDrop(ModBlocks.VOID_LEAVES, leavesDrops(ModBlocks.VOID_LEAVES, ModBlocks.ELEUTHERUS_BLOCK, 0.025f));
+        addDrop(ModBlocks.VOID_LEAVES, leavesDrops(ModBlocks.VOID_LEAVES, ModBlocks.VOID_SAPLING, 0.025f));
     }
 }

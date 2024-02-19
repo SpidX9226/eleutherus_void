@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "eleutherus_void_mod:eleutherus_ore",
-    "eleutherus_void_mod:eleutherus_block"
+    "eleutherus_void_mod:eleutherus_block",
+    "eleutherus_void_mod:random_ore_block"
   ]
 }

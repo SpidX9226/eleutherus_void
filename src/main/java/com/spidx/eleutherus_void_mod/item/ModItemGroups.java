@@ -75,6 +75,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.VOID_SAPLING);
                         entries.add(ModBlocks.VOID_SAND);
 
+                        entries.add(ModItems.VOID_ALBINO_SPAWN_EGG);
+
                         entries.add(ModItems.VOID_DESTROYER_BLADE);
                         entries.add(ModItems.VOID_REAVER_FLAMBERGE);
 

@@ -1,9 +1,12 @@
 package com.spidx.eleutherus_void_mod;
 
 import com.spidx.eleutherus_void_mod.block.ModBlocks;
-import com.spidx.eleutherus_void_mod.datagen.ModWorldGenerator;
 import com.spidx.eleutherus_void_mod.enchantments.ModEnchantments;
-import com.spidx.eleutherus_void_mod.enchantments.VoidSharpnessEnchantment;
+import com.spidx.eleutherus_void_mod.entity.ModEntities;
+import com.spidx.eleutherus_void_mod.entity.client.ModModelLayers;
+import com.spidx.eleutherus_void_mod.entity.client.VoidAlbinoModel;
+import com.spidx.eleutherus_void_mod.entity.client.VoidAlbinoRender;
+import com.spidx.eleutherus_void_mod.entity.custom.VoidAlbino;
 import com.spidx.eleutherus_void_mod.item.ModItemGroups;
 import com.spidx.eleutherus_void_mod.item.ModItems;
 import com.spidx.eleutherus_void_mod.particle.ModParticles;
@@ -11,12 +14,9 @@ import com.spidx.eleutherus_void_mod.util.ModLootTableModifiers;
 import com.spidx.eleutherus_void_mod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,5 +41,7 @@ public class Eleutherus_void_mod implements ModInitializer {
 		ModParticles.registerParticles();
 
 		ModWorldGeneration.generateModWorldGen();
+
+		FabricDefaultAttributeRegistry.register(ModEntities.VOID_ALBINO, VoidAlbino.createVoidAlbinoAttributes());
 	}
 }

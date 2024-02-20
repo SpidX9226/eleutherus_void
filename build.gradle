@@ -16,6 +16,7 @@ repositories {
 		url = 'https://maven.terraformersmc.com/'
 	}
 	maven { url = 'https://maven.minecraftforge.net/' }
+	maven { url 'https://jitpack.io' }
 }
 
 fabricApi {
@@ -33,7 +34,11 @@ dependencies {
 
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:9.0.0-beta.2"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:9.0.0-beta.2"
-	// Uncomment the following line to enable the deprecated Fabric API modules. 
+
+//	modImplementation "com.github.quiqueck:BCLib:${project.bclib_version}"
+//	include "com.github.quiqueck:BCLib:${project.bclib_version}"
+
+// Uncomment the following line to enable the deprecated Fabric API modules.
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 }

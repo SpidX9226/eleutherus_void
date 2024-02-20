@@ -2,6 +2,7 @@ package com.spidx.eleutherus_void_mod.item;
 
 import com.spidx.eleutherus_void_mod.Eleutherus_void_mod;
 import com.spidx.eleutherus_void_mod.block.ModBlocks;
+import com.spidx.eleutherus_void_mod.entity.ModEntities;
 import com.spidx.eleutherus_void_mod.item.custom.ModArmorItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
@@ -25,6 +26,9 @@ public class ModItems {
 
     public static final Item ELEUTHERUS_PIE = registerItem("eleutherus_pie",
             new Item(new FabricItemSettings().food(ModFoodComponents.ELEUTHERUS_PIE)));
+
+    public static final Item VOID_ALBINO_SPAWN_EGG = registerItem("void_albino_spawn_egg",
+            new SpawnEggItem(ModEntities.VOID_ALBINO, 0xe3ebff, 0x0d51ff, new FabricItemSettings()));
 
     public static final Item ELEUTHERUS_PICKAXE = registerItem("eleutherus_pickaxe",
             new PickaxeItem(ModToolMaterial.ELEUTHERUS, 2, -2.6f, new FabricItemSettings()));

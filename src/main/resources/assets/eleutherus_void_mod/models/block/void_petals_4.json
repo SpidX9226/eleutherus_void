@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_4",
+  "textures": {
+    "flowerbed": "eleutherus_void_mod:block/void_petals",
+    "stem": "eleutherus_void_mod:block/void_petals_stem"
+  }
+}

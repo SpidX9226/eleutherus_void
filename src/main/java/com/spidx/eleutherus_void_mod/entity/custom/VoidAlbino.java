@@ -1,12 +1,18 @@
 package com.spidx.eleutherus_void_mod.entity.custom;
 
+import com.mojang.datafixers.types.templates.Tag;
+import com.spidx.eleutherus_void_mod.particle.ModParticles;
+import com.spidx.eleutherus_void_mod.util.ModEntityGroup;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.NavigationConditions;
 import net.minecraft.entity.ai.TargetPredicate;
+import net.minecraft.entity.ai.control.MoveControl;
 import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.pathing.MobNavigation;
 import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
@@ -20,6 +26,9 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.PotionEntity;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.WaterFluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.loot.context.LootContextParameterSet;
@@ -43,6 +52,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.*;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
@@ -56,7 +66,11 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class VoidAlbino extends HostileEntity implements Angerable {
+import static net.minecraft.entity.ai.control.MoveControl.REACHED_DESTINATION_DISTANCE_SQUARED;
+
+
+public class VoidAlbino extends HostileEntity
+        implements Angerable {
 
     private static final UUID ATTACKING_SPEED_BOOST_ID = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
     private static final EntityAttributeModifier ATTACKING_SPEED_BOOST = new EntityAttributeModifier(ATTACKING_SPEED_BOOST_ID, "Attacking speed boost", 0.15f, EntityAttributeModifier.Operation.ADDITION);
@@ -73,29 +87,32 @@ public class VoidAlbino extends HostileEntity implements Angerable {
     private UUID angryAt;
 
     public VoidAlbino(EntityType<? extends VoidAlbino> entityType, World world) {
-        super((EntityType<? extends HostileEntity>)entityType, world);
+        super((EntityType<? extends HostileEntity>) entityType, world);
         this.setStepHeight(1.0f);
-        this.setPathfindingPenalty(PathNodeType.WATER, -1.0f);
+    }
+
+    @Override
+    public boolean canWalkOnFluid(FluidState state) {
+        return state.isIn(FluidTags.WATER) && state.isIn(FluidTags.LAVA);
     }
 
     @Override
     protected void initGoals() {
-        this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new VoidAlbino.ChasePlayerGoal(this));
         this.goalSelector.add(2, new MeleeAttackGoal(this, 1.0, false));
-        this.goalSelector.add(7, new WanderAroundFarGoal((PathAwareEntity)this, 1.0, 0.0f));
+        this.goalSelector.add(7, new WanderAroundFarGoal((PathAwareEntity) this, 1.0, 0.0f));
         this.goalSelector.add(8, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
         this.goalSelector.add(8, new LookAroundGoal(this));
         this.goalSelector.add(10, new VoidAlbino.PlaceBlockGoal(this));
         this.goalSelector.add(11, new VoidAlbino.PickUpBlockGoal(this));
         this.targetSelector.add(1, new VoidAlbino.TeleportTowardsPlayerGoal(this, this::shouldAngerAt));
         this.targetSelector.add(2, new RevengeGoal(this, new Class[0]));
-        this.targetSelector.add(3, new ActiveTargetGoal<VoidAlbino>((MobEntity)this, VoidAlbino.class, true, false));
+        this.targetSelector.add(3, new ActiveTargetGoal<VoidAlbino>((MobEntity) this, VoidAlbino.class, true, false));
         this.targetSelector.add(4, new UniversalAngerGoal<VoidAlbino>(this, false));
     }
 
-    public static DefaultAttributeContainer.Builder createVoidAlbinoAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 60.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 7.0).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64.0);
+    public static DefaultAttributeContainer.Builder createEndermanAttributes() {
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 40.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3f).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 7.0).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64.0);
     }
 
     @Override
@@ -217,20 +234,15 @@ public class VoidAlbino extends HostileEntity implements Angerable {
     public void tickMovement() {
         if (this.getWorld().isClient) {
             for (int i = 0; i < 2; ++i) {
-                this.getWorld().addParticle(ParticleTypes.PORTAL, this.getParticleX(0.5), this.getRandomBodyY() - 0.25, this.getParticleZ(0.5), (this.random.nextDouble() - 0.5) * 2.0, -this.random.nextDouble(), (this.random.nextDouble() - 0.5) * 2.0);
+                this.getWorld().addParticle(ModParticles.VOID_ALBINO_PARTICLE, this.getParticleX(0.5), this.getRandomBodyY() - 0.25, this.getParticleZ(0.5), (this.random.nextDouble() - 0.5) * 2.0, -this.random.nextDouble(), (this.random.nextDouble() - 0.5) * 2.0);
             }
         }
         this.jumping = false;
         if (!this.getWorld().isClient) {
-            this.tickAngerLogic((ServerWorld)this.getWorld(), true);
+            this.tickAngerLogic((ServerWorld) this.getWorld(), true);
         }
         super.tickMovement();
     }
-
-//    @Override
-//    public boolean hurtByWater() {
-//        return false;
-//    }
 
     @Override
     protected void mobTick() {
@@ -247,7 +259,7 @@ public class VoidAlbino extends HostileEntity implements Angerable {
             return false;
         }
         double d = this.getX() + (this.random.nextDouble() - 0.5) * 64.0;
-        double e = this.getY() + (double)(this.random.nextInt(64) - 32);
+        double e = this.getY() + (double) (this.random.nextInt(64) - 32);
         double f = this.getZ() + (this.random.nextDouble() - 0.5) * 64.0;
         return this.teleportTo(d, e, f);
     }
@@ -257,7 +269,7 @@ public class VoidAlbino extends HostileEntity implements Angerable {
         vec3d = vec3d.normalize();
         double d = 16.0;
         double e = this.getX() + (this.random.nextDouble() - 0.5) * 8.0 - vec3d.x * 16.0;
-        double f = this.getY() + (double)(this.random.nextInt(16) - 8) - vec3d.y * 16.0;
+        double f = this.getY() + (double) (this.random.nextInt(16) - 8) - vec3d.y * 16.0;
         double g = this.getZ() + (this.random.nextDouble() - 0.5) * 8.0 - vec3d.z * 16.0;
         return this.teleportTo(e, f, g);
     }
@@ -307,7 +319,7 @@ public class VoidAlbino extends HostileEntity implements Angerable {
         if (blockState != null) {
             ItemStack itemStack = new ItemStack(Items.DIAMOND_AXE);
             itemStack.addEnchantment(Enchantments.SILK_TOUCH, 1);
-            LootContextParameterSet.Builder builder = new LootContextParameterSet.Builder((ServerWorld)this.getWorld()).add(LootContextParameters.ORIGIN, this.getPos()).add(LootContextParameters.TOOL, itemStack).addOptional(LootContextParameters.THIS_ENTITY, this);
+            LootContextParameterSet.Builder builder = new LootContextParameterSet.Builder((ServerWorld) this.getWorld()).add(LootContextParameters.ORIGIN, this.getPos()).add(LootContextParameters.TOOL, itemStack).addOptional(LootContextParameters.THIS_ENTITY, this);
             List<ItemStack> list = blockState.getDroppedStacks(builder);
             for (ItemStack itemStack2 : list) {
                 this.dropStack(itemStack2);
@@ -331,7 +343,7 @@ public class VoidAlbino extends HostileEntity implements Angerable {
         }
         boolean bl = source.getSource() instanceof PotionEntity;
         if (source.isIn(DamageTypeTags.IS_PROJECTILE) || bl) {
-            boolean bl2 = bl && this.damageFromPotion(source, (PotionEntity)source.getSource(), amount);
+            boolean bl2 = bl && this.damageFromPotion(source, (PotionEntity) source.getSource(), amount);
             for (int i = 0; i < 64; ++i) {
                 if (!this.teleportRandomly()) continue;
                 return true;
@@ -376,128 +388,128 @@ public class VoidAlbino extends HostileEntity implements Angerable {
 
     static class ChasePlayerGoal
             extends Goal {
-        private final VoidAlbino enderman;
+        private final VoidAlbino voidAlbino;
         @Nullable
         private LivingEntity target;
 
-        public ChasePlayerGoal(VoidAlbino enderman) {
-            this.enderman = enderman;
+        public ChasePlayerGoal(VoidAlbino voidAlbino) {
+            this.voidAlbino = voidAlbino;
             this.setControls(EnumSet.of(Goal.Control.JUMP, Goal.Control.MOVE));
         }
 
         @Override
         public boolean canStart() {
-            this.target = this.enderman.getTarget();
+            this.target = this.voidAlbino.getTarget();
             if (!(this.target instanceof PlayerEntity)) {
                 return false;
             }
-            double d = this.target.squaredDistanceTo(this.enderman);
+            double d = this.target.squaredDistanceTo(this.voidAlbino);
             if (d > 256.0) {
                 return false;
             }
-            return this.enderman.isPlayerStaring((PlayerEntity)this.target);
+            return this.voidAlbino.isPlayerStaring((PlayerEntity) this.target);
         }
 
         @Override
         public void start() {
-            this.enderman.getNavigation().stop();
+            this.voidAlbino.getNavigation().stop();
         }
 
         @Override
         public void tick() {
-            this.enderman.getLookControl().lookAt(this.target.getX(), this.target.getEyeY(), this.target.getZ());
+            this.voidAlbino.getLookControl().lookAt(this.target.getX(), this.target.getEyeY(), this.target.getZ());
         }
     }
 
     static class PlaceBlockGoal
             extends Goal {
-        private final VoidAlbino enderman;
+        private final VoidAlbino voidAlbino;
+        private double targetSelector;
 
-        public PlaceBlockGoal(VoidAlbino enderman) {
-            this.enderman = enderman;
+        public PlaceBlockGoal(VoidAlbino voidAlbino) {
+            this.voidAlbino = voidAlbino;
         }
 
         @Override
         public boolean canStart() {
-            if (this.enderman.getCarriedBlock() == null) {
+            if (this.voidAlbino.getCarriedBlock() == null) {
                 return false;
             }
-            if (!this.enderman.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
+            if (!this.voidAlbino.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
                 return false;
             }
-            return this.enderman.getRandom().nextInt(VoidAlbino.PlaceBlockGoal.toGoalTicks(2000)) == 0;
+            return this.voidAlbino.getRandom().nextInt(VoidAlbino.PlaceBlockGoal.toGoalTicks(2000)) == 0;
         }
 
         @Override
         public void tick() {
-            Random random = this.enderman.getRandom();
-            World world = this.enderman.getWorld();
-            int i = MathHelper.floor(this.enderman.getX() - 1.0 + random.nextDouble() * 2.0);
-            int j = MathHelper.floor(this.enderman.getY() + random.nextDouble() * 2.0);
-            int k = MathHelper.floor(this.enderman.getZ() - 1.0 + random.nextDouble() * 2.0);
+            Random random = this.voidAlbino.getRandom();
+            World world = this.voidAlbino.getWorld();
+            int i = MathHelper.floor(this.voidAlbino.getX() - 1.0 + random.nextDouble() * 2.0);
+            int j = MathHelper.floor(this.voidAlbino.getY() + random.nextDouble() * 2.0);
+            int k = MathHelper.floor(this.voidAlbino.getZ() - 1.0 + random.nextDouble() * 2.0);
             BlockPos blockPos = new BlockPos(i, j, k);
             BlockState blockState = world.getBlockState(blockPos);
             BlockPos blockPos2 = blockPos.down();
             BlockState blockState2 = world.getBlockState(blockPos2);
-            BlockState blockState3 = this.enderman.getCarriedBlock();
+            BlockState blockState3 = this.voidAlbino.getCarriedBlock();
             if (blockState3 == null) {
                 return;
             }
-            if (this.canPlaceOn(world, blockPos, blockState3 = Block.postProcessState(blockState3, this.enderman.getWorld(), blockPos), blockState, blockState2, blockPos2)) {
+            if (this.canPlaceOn(world, blockPos, blockState3 = Block.postProcessState(blockState3, this.voidAlbino.getWorld(), blockPos), blockState, blockState2, blockPos2)) {
                 world.setBlockState(blockPos, blockState3, Block.NOTIFY_ALL);
-                world.emitGameEvent(GameEvent.BLOCK_PLACE, blockPos, GameEvent.Emitter.of(this.enderman, blockState3));
-                this.enderman.setCarriedBlock(null);
+                world.emitGameEvent(GameEvent.BLOCK_PLACE, blockPos, GameEvent.Emitter.of(this.voidAlbino, blockState3));
+                this.voidAlbino.setCarriedBlock(null);
             }
         }
-
         private boolean canPlaceOn(World world, BlockPos posAbove, BlockState carriedState, BlockState stateAbove, BlockState state, BlockPos pos) {
-            return stateAbove.isAir() && !state.isAir() && !state.isOf(Blocks.BEDROCK) && state.isFullCube(world, pos) && carriedState.canPlaceAt(world, posAbove) && world.getOtherEntities(this.enderman, Box.from(Vec3d.of(posAbove))).isEmpty();
+            return stateAbove.isAir() && !state.isAir() && !state.isOf(Blocks.BEDROCK) && state.isFullCube(world, pos) && carriedState.canPlaceAt(world, posAbove) && world.getOtherEntities(this.voidAlbino, Box.from(Vec3d.of(posAbove))).isEmpty();
         }
     }
 
     static class PickUpBlockGoal
             extends Goal {
-        private final VoidAlbino enderman;
+        private final VoidAlbino voidAlbino;
 
-        public PickUpBlockGoal(VoidAlbino enderman) {
-            this.enderman = enderman;
+        public PickUpBlockGoal(VoidAlbino voidAlbino) {
+            this.voidAlbino = voidAlbino;
         }
 
         @Override
         public boolean canStart() {
-            if (this.enderman.getCarriedBlock() != null) {
+            if (this.voidAlbino.getCarriedBlock() != null) {
                 return false;
             }
-            if (!this.enderman.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
+            if (!this.voidAlbino.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
                 return false;
             }
-            return this.enderman.getRandom().nextInt(VoidAlbino.PickUpBlockGoal.toGoalTicks(20)) == 0;
+            return this.voidAlbino.getRandom().nextInt(VoidAlbino.PickUpBlockGoal.toGoalTicks(20)) == 0;
         }
 
         @Override
         public void tick() {
-            Random random = this.enderman.getRandom();
-            World world = this.enderman.getWorld();
-            int i = MathHelper.floor(this.enderman.getX() - 2.0 + random.nextDouble() * 4.0);
-            int j = MathHelper.floor(this.enderman.getY() + random.nextDouble() * 3.0);
-            int k = MathHelper.floor(this.enderman.getZ() - 2.0 + random.nextDouble() * 4.0);
+            Random random = this.voidAlbino.getRandom();
+            World world = this.voidAlbino.getWorld();
+            int i = MathHelper.floor(this.voidAlbino.getX() - 2.0 + random.nextDouble() * 4.0);
+            int j = MathHelper.floor(this.voidAlbino.getY() + random.nextDouble() * 3.0);
+            int k = MathHelper.floor(this.voidAlbino.getZ() - 2.0 + random.nextDouble() * 4.0);
             BlockPos blockPos = new BlockPos(i, j, k);
             BlockState blockState = world.getBlockState(blockPos);
-            Vec3d vec3d = new Vec3d((double)this.enderman.getBlockX() + 0.5, (double)j + 0.5, (double)this.enderman.getBlockZ() + 0.5);
-            Vec3d vec3d2 = new Vec3d((double)i + 0.5, (double)j + 0.5, (double)k + 0.5);
-            BlockHitResult blockHitResult = world.raycast(new RaycastContext(vec3d, vec3d2, RaycastContext.ShapeType.OUTLINE, RaycastContext.FluidHandling.NONE, this.enderman));
+            Vec3d vec3d = new Vec3d((double) this.voidAlbino.getBlockX() + 0.5, (double) j + 0.5, (double) this.voidAlbino.getBlockZ() + 0.5);
+            Vec3d vec3d2 = new Vec3d((double) i + 0.5, (double) j + 0.5, (double) k + 0.5);
+            BlockHitResult blockHitResult = world.raycast(new RaycastContext(vec3d, vec3d2, RaycastContext.ShapeType.OUTLINE, RaycastContext.FluidHandling.NONE, this.voidAlbino));
             boolean bl = blockHitResult.getBlockPos().equals(blockPos);
             if (blockState.isIn(BlockTags.ENDERMAN_HOLDABLE) && bl) {
                 world.removeBlock(blockPos, false);
-                world.emitGameEvent(GameEvent.BLOCK_DESTROY, blockPos, GameEvent.Emitter.of(this.enderman, blockState));
-                this.enderman.setCarriedBlock(blockState.getBlock().getDefaultState());
+                world.emitGameEvent(GameEvent.BLOCK_DESTROY, blockPos, GameEvent.Emitter.of(this.voidAlbino, blockState));
+                this.voidAlbino.setCarriedBlock(blockState.getBlock().getDefaultState());
             }
         }
     }
 
     static class TeleportTowardsPlayerGoal
             extends ActiveTargetGoal<PlayerEntity> {
-        private final VoidAlbino enderman;
+        private final VoidAlbino voidAlbino;
         @Nullable
         private PlayerEntity targetPlayer;
         private int lookAtPlayerWarmup;
@@ -506,16 +518,16 @@ public class VoidAlbino extends HostileEntity implements Angerable {
         private final TargetPredicate validTargetPredicate = TargetPredicate.createAttackable().ignoreVisibility();
         private final Predicate<LivingEntity> angerPredicate;
 
-        public TeleportTowardsPlayerGoal(VoidAlbino enderman, @Nullable Predicate<LivingEntity> targetPredicate) {
-            super(enderman, PlayerEntity.class, 10, false, false, targetPredicate);
-            this.enderman = enderman;
-            this.angerPredicate = playerEntity -> (enderman.isPlayerStaring((PlayerEntity)playerEntity) || enderman.shouldAngerAt((LivingEntity)playerEntity)) && !enderman.hasPassengerDeep((Entity)playerEntity);
+        public TeleportTowardsPlayerGoal(VoidAlbino voidAlbino, @Nullable Predicate<LivingEntity> targetPredicate) {
+            super(voidAlbino, PlayerEntity.class, 10, false, false, targetPredicate);
+            this.voidAlbino = voidAlbino;
+            this.angerPredicate = playerEntity -> (voidAlbino.isPlayerStaring((PlayerEntity) playerEntity) || voidAlbino.shouldAngerAt((LivingEntity) playerEntity)) && !voidAlbino.hasPassengerDeep((Entity) playerEntity);
             this.staringPlayerPredicate = TargetPredicate.createAttackable().setBaseMaxDistance(this.getFollowRange()).setPredicate(this.angerPredicate);
         }
 
         @Override
         public boolean canStart() {
-            this.targetPlayer = this.enderman.getWorld().getClosestPlayer(this.staringPlayerPredicate, this.enderman);
+            this.targetPlayer = this.voidAlbino.getWorld().getClosestPlayer(this.staringPlayerPredicate, this.voidAlbino);
             return this.targetPlayer != null;
         }
 
@@ -523,7 +535,7 @@ public class VoidAlbino extends HostileEntity implements Angerable {
         public void start() {
             this.lookAtPlayerWarmup = this.getTickCount(5);
             this.ticksSinceUnseenTeleport = 0;
-            this.enderman.setProvoked();
+            this.voidAlbino.setProvoked();
         }
 
         @Override
@@ -538,14 +550,14 @@ public class VoidAlbino extends HostileEntity implements Angerable {
                 if (!this.angerPredicate.test(this.targetPlayer)) {
                     return false;
                 }
-                this.enderman.lookAtEntity(this.targetPlayer, 10.0f, 10.0f);
+                this.voidAlbino.lookAtEntity(this.targetPlayer, 10.0f, 10.0f);
                 return true;
             }
             if (this.targetEntity != null) {
-                if (this.enderman.hasPassengerDeep(this.targetEntity)) {
+                if (this.voidAlbino.hasPassengerDeep(this.targetEntity)) {
                     return false;
                 }
-                if (this.validTargetPredicate.test(this.enderman, this.targetEntity)) {
+                if (this.validTargetPredicate.test(this.voidAlbino, this.targetEntity)) {
                     return true;
                 }
             }
@@ -554,7 +566,7 @@ public class VoidAlbino extends HostileEntity implements Angerable {
 
         @Override
         public void tick() {
-            if (this.enderman.getTarget() == null) {
+            if (this.voidAlbino.getTarget() == null) {
                 super.setTargetEntity(null);
             }
             if (this.targetPlayer != null) {
@@ -564,19 +576,24 @@ public class VoidAlbino extends HostileEntity implements Angerable {
                     super.start();
                 }
             } else {
-                if (this.targetEntity != null && !this.enderman.hasVehicle()) {
-                    if (this.enderman.isPlayerStaring((PlayerEntity)this.targetEntity)) {
-                        if (this.targetEntity.squaredDistanceTo(this.enderman) < 16.0) {
-                            this.enderman.teleportRandomly();
+                if (this.targetEntity != null && !this.voidAlbino.hasVehicle()) {
+                    if (this.voidAlbino.isPlayerStaring((PlayerEntity) this.targetEntity)) {
+                        if (this.targetEntity.squaredDistanceTo(this.voidAlbino) < 16.0) {
+                            this.voidAlbino.teleportRandomly();
                         }
                         this.ticksSinceUnseenTeleport = 0;
-                    } else if (this.targetEntity.squaredDistanceTo(this.enderman) > 256.0 && this.ticksSinceUnseenTeleport++ >= this.getTickCount(30) && this.enderman.teleportTo(this.targetEntity)) {
+                    } else if (this.targetEntity.squaredDistanceTo(this.voidAlbino) > 256.0 && this.ticksSinceUnseenTeleport++ >= this.getTickCount(30) && this.voidAlbino.teleportTo(this.targetEntity)) {
                         this.ticksSinceUnseenTeleport = 0;
                     }
                 }
                 super.tick();
             }
         }
+    }
+
+    @Override
+    public ModEntityGroup getGroup() {
+        return ModEntityGroup.VOID;
     }
 
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "eleutherus_void_mod:block/void_sandstone"
+  }
+}

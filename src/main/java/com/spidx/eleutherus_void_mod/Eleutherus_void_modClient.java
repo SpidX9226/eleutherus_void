@@ -6,6 +6,7 @@ import com.spidx.eleutherus_void_mod.entity.client.ModModelLayers;
 import com.spidx.eleutherus_void_mod.entity.client.VoidAlbinoModel;
 import com.spidx.eleutherus_void_mod.entity.client.VoidAlbinoRender;
 import com.spidx.eleutherus_void_mod.particle.ModParticles;
+import com.spidx.eleutherus_void_mod.particle.custom.VoidAlbinoParticle;
 import com.spidx.eleutherus_void_mod.particle.custom.VoidLeaves;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
@@ -15,7 +16,6 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
-import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.SpriteIdentifier;
 
 public class Eleutherus_void_modClient implements ClientModInitializer {
@@ -26,6 +26,8 @@ public class Eleutherus_void_modClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VOID_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VOID_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VOID_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VOID_PETALS, RenderLayer.getCutout());
 
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks.VOID_SIGN_TEXTURE));
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks.VOID_HANGING_SIGN_TEXTURE));
@@ -36,8 +38,13 @@ public class Eleutherus_void_modClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(ModParticles.VOID_LEAVES_PARTICLE,
                 VoidLeaves.Factory::new);
 
+        ParticleFactoryRegistry.getInstance().register(ModParticles.VOID_ALBINO_PARTICLE,
+                VoidAlbinoParticle.Factory::new);
+
         EntityRendererRegistry.register(ModEntities.VOID_ALBINO,
                 VoidAlbinoRender::new);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.VOID_ALBINO, VoidAlbinoModel::getTexturesModelData);
+
     }
+
 }

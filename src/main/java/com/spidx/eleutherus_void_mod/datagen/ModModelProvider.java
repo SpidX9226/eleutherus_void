@@ -6,8 +6,12 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Model;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.util.Identifier;
+
+import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -56,6 +60,7 @@ public class ModModelProvider extends FabricModelProvider {
         eleutherusPool.family(ModBlocks.ELEUTHERUS_FAMILY);
 
         blockStateModelGenerator.registerTintableCross(ModBlocks.VOID_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.VOID_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override
@@ -65,6 +70,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ELEUTHERUS_DUST, Models.GENERATED);
         itemModelGenerator.register(ModItems.COPPER_DUST, Models.GENERATED);
         itemModelGenerator.register(ModItems.ELEUTHERUS_SMITHING_UPGRADE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VOID_ALBINO_SPAWN_EGG, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.ELEUTHERUS_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ELEUTHERUS_SWORD, Models.HANDHELD);
@@ -72,9 +78,11 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ELEUTHERUS_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ELEUTHERUS_HOE, Models.HANDHELD);
 
+
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_BOOTS));
+
     }
 }

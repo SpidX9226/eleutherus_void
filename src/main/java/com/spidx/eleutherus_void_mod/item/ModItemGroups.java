@@ -2,7 +2,9 @@ package com.spidx.eleutherus_void_mod.item;
 
 import com.spidx.eleutherus_void_mod.Eleutherus_void_mod;
 import com.spidx.eleutherus_void_mod.block.ModBlocks;
+import com.spidx.eleutherus_void_mod.painting.ModPainting;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -51,6 +53,8 @@ public class ModItemGroups {
                         entries.add(ModItems.ELEUTHERUS_SIGN);
                         entries.add(ModItems.HANGING_ELEUTHERUS_SIGN);
 
+                        entries.add(ModBlocks.VOID_NYLIUM);
+                        entries.add(ModBlocks.VOID_PETALS);
                         entries.add(ModBlocks.VOID_LOG);
                         entries.add(ModBlocks.VOID_WOOD);
                         entries.add(ModBlocks.STRIPPED_VOID_LOG);
@@ -74,11 +78,24 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.VOID_SAPLING);
                         entries.add(ModBlocks.VOID_SAND);
+                        entries.add(ModBlocks.VOID_SANDSTONE);
+                        entries.add(ModBlocks.VOID_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.VOID_STAIRS_SANDSTONE);
+                        entries.add(ModBlocks.VOID_SANDSTONE_WALL);
+                        entries.add(ModBlocks.SMOOTH_VOID_SANDSTONE);
+                        entries.add(ModBlocks.SMOOTH_VOID_SANDSTONE_SLAB);
+                        entries.add(ModBlocks.SMOOTH_VOID_SANDSTONE_STAIRS);
+                        entries.add(ModBlocks.CUT_VOID_SANDSTONE);
+                        entries.add(ModBlocks.CUT_VOID_SANDSTONE_SLAB);
 
                         entries.add(ModItems.VOID_ALBINO_SPAWN_EGG);
 
+                        entries.add(ModItems.VOID_ALBINO_PEARL);
+                        entries.add(ModItems.MOON_OPAL);
+
                         entries.add(ModItems.VOID_DESTROYER_BLADE);
                         entries.add(ModItems.VOID_REAVER_FLAMBERGE);
+                        entries.add(ModItems.VOID_KATANA);
 
                     }).build());
     public static void registerItemGroups(){

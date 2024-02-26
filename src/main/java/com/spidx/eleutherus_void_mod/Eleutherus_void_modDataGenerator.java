@@ -3,6 +3,7 @@ package com.spidx.eleutherus_void_mod;
 import com.spidx.eleutherus_void_mod.datagen.*;
 import com.spidx.eleutherus_void_mod.world.ModConfiguredFeature;
 import com.spidx.eleutherus_void_mod.world.ModPlacedFeature;
+import com.spidx.eleutherus_void_mod.world.biome.ModBiomes;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
@@ -25,5 +26,6 @@ public class Eleutherus_void_modDataGenerator implements DataGeneratorEntrypoint
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeature::boostrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeature::boostrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap);
 	}
 }

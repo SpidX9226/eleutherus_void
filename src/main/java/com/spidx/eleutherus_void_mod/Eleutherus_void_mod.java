@@ -3,18 +3,15 @@ package com.spidx.eleutherus_void_mod;
 import com.spidx.eleutherus_void_mod.block.ModBlocks;
 import com.spidx.eleutherus_void_mod.enchantments.ModEnchantments;
 import com.spidx.eleutherus_void_mod.entity.ModEntities;
-import com.spidx.eleutherus_void_mod.entity.client.ModModelLayers;
-import com.spidx.eleutherus_void_mod.entity.client.VoidAlbinoModel;
-import com.spidx.eleutherus_void_mod.entity.client.VoidAlbinoRender;
 import com.spidx.eleutherus_void_mod.entity.custom.VoidAlbino;
 import com.spidx.eleutherus_void_mod.item.ModItemGroups;
 import com.spidx.eleutherus_void_mod.item.ModItems;
+import com.spidx.eleutherus_void_mod.painting.ModPainting;
 import com.spidx.eleutherus_void_mod.particle.ModParticles;
 import com.spidx.eleutherus_void_mod.util.ModLootTableModifiers;
 import com.spidx.eleutherus_void_mod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import org.slf4j.Logger;
@@ -39,9 +36,10 @@ public class Eleutherus_void_mod implements ModInitializer {
 		ModLootTableModifiers.modifyLootTables();
 		ModEnchantments.registerModEnchantments();
 		ModParticles.registerParticles();
+		ModPainting.registerPaintings();
 
 		ModWorldGeneration.generateModWorldGen();
 
-		FabricDefaultAttributeRegistry.register(ModEntities.VOID_ALBINO, VoidAlbino.createVoidAlbinoAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.VOID_ALBINO, VoidAlbino.createEndermanAttributes());
 	}
 }

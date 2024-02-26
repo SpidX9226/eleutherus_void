@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "eleutherus_void_mod:block/void_sandstone_bottom",
+    "side": "eleutherus_void_mod:block/void_sandstone",
+    "top": "eleutherus_void_mod:block/void_sandstone_top"
+  }
+}

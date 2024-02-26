@@ -19,7 +19,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.DIRT)
-                .add(ModBlocks.VOID_SAND);
+                .add(ModBlocks.VOID_NYLIUM);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.ELEUTHERUS_ORE)
@@ -50,5 +50,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
                 .add(ModBlocks.ELEUTHERUS_FENCE_GATE)
                 .add(ModBlocks.VOID_FENCE_GATE);
+
+        getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(ModBlocks.VOID_SANDSTONE_WALL);
     }
 }

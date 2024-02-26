@@ -21,6 +21,12 @@ public class ModItems {
     public static final Item COPPER_DUST = registerItem("copper_dust",
             new Item(new FabricItemSettings()));
 
+    public static final Item VOID_ALBINO_PEARL = registerItem("void_albino_pearl",
+            new EnderPearlItem(new FabricItemSettings()));
+
+    public static final Item MOON_OPAL = registerItem("moon_opal",
+            new Item(new FabricItemSettings()));
+
     public static final Item ELEUTHERUS_SMITHING_UPGRADE  = registerItem("eleutherus_smithing_update",
             new Item(new FabricItemSettings()));
 
@@ -71,6 +77,9 @@ public class ModItems {
             new PickaxeItem(ModToolMaterial.VOID, 3, -2f, new FabricItemSettings().rarity(Rarity.EPIC)));
 
     public static final Item VOID_REAVER_FLAMBERGE = registerItem("void_reaver_flamberge",
+            new PickaxeItem(ModToolMaterial.VOID, 5, -2.2f, new FabricItemSettings().rarity(Rarity.EPIC)));
+
+    public static final Item VOID_KATANA = registerItem("void_katana",
             new PickaxeItem(ModToolMaterial.VOID, 5, -2.2f, new FabricItemSettings().rarity(Rarity.EPIC)));
 
     public static Item registerItem(String name, Item item){

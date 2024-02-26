@@ -11,15 +11,20 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 
+import net.minecraft.client.render.*;
+import net.minecraft.client.gl.JsonEffectShaderProgram;
+import net.minecraft.client.gl.EffectShaderStage;
+import net.minecraft.util.Identifier;
 
-public class VoidAlbinoRender extends MobEntityRenderer<VoidAlbino, VoidAlbinoModel<VoidAlbino>> {
 
-    private static final Identifier TEXTURE = new Identifier(Eleutherus_void_mod.MOD_ID, "textures/entity/void_albino.png");
+
+public class VoidAlbinoRender extends MobEntityRenderer<VoidAlbino, VoidAlbinoModel<VoidAlbino>>{
+
+    private static final Identifier TEXTURE = new Identifier(Eleutherus_void_mod.MOD_ID, "textures/entity/void_albino/void_albino.png");
     private final Random random = Random.create();
 
     public VoidAlbinoRender(EntityRendererFactory.Context context) {
         super(context, new VoidAlbinoModel<VoidAlbino>(context.getPart(ModModelLayers.VOID_ALBINO)), 0.5f);
-        this.addFeature(new VoidAlbinoEyesFeatureRender<VoidAlbino>(this));
         this.addFeature(new VoidAlbinoBlockFeatureRender(this, context.getBlockRenderManager()));
     }
 

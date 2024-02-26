@@ -1,0 +1,11 @@
+{
+  "program": [
+    {
+      "name": "glitch_filter",
+      "comment": "GLSL shader for glitch effect",
+      "type": "fragment",
+      "file": "filter/glitch_filter.glsl"
+    }
+  ]
+}
+

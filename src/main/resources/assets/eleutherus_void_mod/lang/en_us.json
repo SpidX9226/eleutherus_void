@@ -61,5 +61,21 @@
 
   "item.eleutherus_void_mod.void_destroyer_blade": "Void destroyer blade",
 
-  "itemgroup.eleutherus_void": "eleutherus & void: end"
+  "itemgroup.eleutherus_void": "eleutherus & void: end",
+
+
+  "block.eleutherus_void_mod.void_sand": "Void sand",
+  "block.eleutherus_void_mod.void_sandstone": "Void sandstone",
+  "block.eleutherus_void_mod.smooth_void_sandstone": "Smooth void sandstone",
+  "block.eleutherus_void_mod.cut_void_sandstone": "Cut void sandstone",
+  "block.eleutherus_void_mod.void_sandstone_stairs": "Void sandstone stairs",
+  "block.eleutherus_void_mod.void_sandstone_slab": "Void sandstone slab",
+  "block.eleutherus_void_mod.void_sandstone_wall": "Void sandstone wall",
+  "block.eleutherus_void_mod.smooth_void_sandstone_stairs": "Smooth void sandstone stairs",
+  "block.eleutherus_void_mod.cut_void_sandstone_slab": "Cut void sandstone slab",
+  "block.eleutherus_void_mod.void_bush": "Void bush",
+
+  "item.eleutherus_void_mod.void_albino_spawn_egg": "Void albino spawn egg",
+  "item.eleutherus_void_mod.void_katana": "Moon katana",
+  "item.eleutherus_void_mod.void_reaver_flamberge": "Void reaver flamberge"
 }

@@ -80,13 +80,45 @@ public class ModBlocks {
             new SaplingBlock(ModSaplingGenerators.VOID, FabricBlockSettings.copyOf(Blocks.CHERRY_SAPLING)));
 
     public static final Block VOID_PLANKS = registerBlock("void_planks",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS)));
+
+    public static final Block VOID_NYLIUM = registerBlock("void_nylium",
+            new GrassBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS)));
+
+    public static final Block VOID_PETALS = registerBlock("void_petals",
+            new FlowerbedBlock(FabricBlockSettings.copyOf(Blocks.PINK_PETALS)));
 
     public static final Block VOID_SAND = registerBlock("void_sand",
-            new SoulSandBlock(FabricBlockSettings.copyOf(Blocks.SOUL_SOIL).lightLevel(s -> 5)));
+            new SoulSandBlock(FabricBlockSettings.copyOf(Blocks.SAND)));
+
+    public static final Block VOID_BUSH = registerBlock("void_bush",
+            new DeadBushBlock(FabricBlockSettings.copyOf(Blocks.DEAD_BUSH)));
+
+    public static final Block VOID_SANDSTONE = registerBlock("void_sandstone",
+            new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+
+    public static final Block SMOOTH_VOID_SANDSTONE = registerBlock("smooth_void_sandstone",
+            new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE)));
+
+    public static final Block CUT_VOID_SANDSTONE = registerBlock("cut_void_sandstone",
+            new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE)));
+
+    public static final Block VOID_STAIRS_SANDSTONE = registerBlock("void_sandstone_stairs",
+            new StairsBlock(ModBlocks.VOID_SAND.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE_STAIRS)));
+    public static final Block VOID_SANDSTONE_SLAB = registerBlock("void_sandstone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)));
+    public static final Block VOID_SANDSTONE_WALL = registerBlock("void_sandstone_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_WALL)));
+
+    public static final Block SMOOTH_VOID_SANDSTONE_STAIRS = registerBlock("smooth_void_sandstone_stairs",
+            new StairsBlock(ModBlocks.VOID_SAND.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE_STAIRS)));
+    public static final Block SMOOTH_VOID_SANDSTONE_SLAB = registerBlock("smooth_void_sandstone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)));
+    public static final Block CUT_VOID_SANDSTONE_SLAB = registerBlock("cut_void_sandstone_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)));
 
     public static final Block VOID_LEAVES = registerBlock("void_leaves",
-            new VoidLeavesBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_LEAVES).nonOpaque().lightLevel(s -> 5).nonOpaque()));
+            new VoidLeavesBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_LEAVES)));
 
     public static final Block VOID_STAIRS = registerBlock("void_stairs",
             new StairsBlock(ModBlocks.VOID_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));

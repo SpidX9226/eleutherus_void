@@ -27,6 +27,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RANDOM_ORE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ELEUTHERUS_BLOCK);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TUNGSTEN_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_TUNGSTEN_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TUNGSTEN_ORE);
+
         eleutherusPool.stairs(ModBlocks.ELEUTHERUS_STAIRS);
         eleutherusPool.slab(ModBlocks.ELEUTHERUS_SLAB);
         eleutherusPool.button(ModBlocks.ELEUTHERUS_BUTTON);
@@ -72,17 +76,33 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ELEUTHERUS_SMITHING_UPGRADE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VOID_ALBINO_SPAWN_EGG, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.TUNGSTEN_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RAW_TUNGSTEN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TUNGSTEN_SCRAP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TUNGSTEN_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.ELEUTHERUS_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ELEUTHERUS_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ELEUTHERUS_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ELEUTHERUS_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ELEUTHERUS_HOE, Models.HANDHELD);
 
+        itemModelGenerator.register(ModItems.TUNGSTEN_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TUNGSTEN_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TUNGSTEN_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TUNGSTEN_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.TUNGSTEN_HOE, Models.HANDHELD);
+
 
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ELEUTHERUS_BOOTS));
+
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.TUNGSTEN_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.TUNGSTEN_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.TUNGSTEN_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.TUNGSTEN_BOOTS));
 
     }
 }

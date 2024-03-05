@@ -18,16 +18,21 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.ELEUTHERUS_HELMET)
+                .add(ModItems.TUNGSTEN_HELMET)
                 .add(ModItems.ELEUTHERUS_CHESTPLATE)
+                .add(ModItems.TUNGSTEN_CHESTPLATE)
                 .add(ModItems.ELEUTHERUS_LEGGINGS)
-                .add(ModItems.ELEUTHERUS_BOOTS);
+                .add(ModItems.TUNGSTEN_LEGGINGS)
+                .add(ModItems.ELEUTHERUS_BOOTS)
+                .add(ModItems.TUNGSTEN_BOOTS);
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.ELEUTHERUS_PLANKS.asItem())
                 .add(ModBlocks.VOID_PLANKS.asItem());
 
         getOrCreateTagBuilder(ItemTags.BEACON_PAYMENT_ITEMS)
-                .add(ModItems.ELEUTHERUS);
+                .add(ModItems.ELEUTHERUS)
+                .add(ModItems.TUNGSTEN_INGOT);
 
     }
 }

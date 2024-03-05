@@ -12,6 +12,46 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
 public class ModItems {
+
+    public static final Item RAW_TUNGSTEN = registerItem("raw_tungsten",
+            new Item(new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_INGOT = registerItem("tungsten_ingot",
+            new Item(new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_SCRAP = registerItem("tungsten_scrap",
+            new Item(new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_UPGRADE_SMITHING_TEMPLATE = registerItem("tungsten_upgrade_smithing_template",
+            new Item(new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_PICKAXE = registerItem("tungsten_pickaxe",
+            new PickaxeItem(ModToolMaterial.TUNGSTEN, 1, -2.6f, new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_SWORD = registerItem("tungsten_sword",
+            new SwordItem(ModToolMaterial.TUNGSTEN, 3, -2.2f, new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_AXE = registerItem("tungsten_axe",
+            new AxeItem(ModToolMaterial.TUNGSTEN, 5, -2.8f, new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_SHOVEL = registerItem("tungsten_shovel",
+            new ShovelItem(ModToolMaterial.TUNGSTENF, 2, -2.8f, new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_HOE = registerItem("tungsten_hoe",
+            new HoeItem(ModToolMaterial.TUNGSTEN, -4, 0.2f, new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_HELMET = registerItem("tungsten_helmet",
+            new ModArmorItem(ModArmorMaterials.TUNGSTEN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_CHESTPLATE = registerItem("tungsten_chestplate",
+            new ModArmorItem(ModArmorMaterials.TUNGSTEN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_LEGGINGS = registerItem("tungsten_leggings",
+            new ModArmorItem(ModArmorMaterials.TUNGSTEN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+
+    public static final Item TUNGSTEN_BOOTS = registerItem("tungsten_boots",
+            new ModArmorItem(ModArmorMaterials.TUNGSTEN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
     public static final Item ELEUTHERUS = registerItem("eleutherus",
             new Item(new FabricItemSettings()));
 

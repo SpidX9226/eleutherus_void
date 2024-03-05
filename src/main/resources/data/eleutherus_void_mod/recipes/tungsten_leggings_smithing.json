@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "eleutherus_void_mod:tungsten_ingot"
+  },
+  "base": {
+    "item": "minecraft:iron_leggings"
+  },
+  "result": {
+    "item": "eleutherus_void_mod:tungsten_leggings"
+  },
+  "template": {
+    "item": "eleutherus_void_mod:tungsten_upgrade_smithing_template"
+  }
+}

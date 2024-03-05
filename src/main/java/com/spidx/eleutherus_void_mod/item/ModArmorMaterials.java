@@ -10,8 +10,12 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
+    TUNGSTEN("tungsten", 45, new int[]{3, 8, 6, 3}, 19, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+            4f, 0.2f, () -> Ingredient.ofItems(ModItems.TUNGSTEN_INGOT)),
+
     ELEUTHERUS("eleutherus", 45, new int[]{4, 9, 7, 4}, 19, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
             4f, 0.2f, () -> Ingredient.ofItems(ModItems.ELEUTHERUS));
+
     private final String name;
     private final int durabilityMultiplier;
     private final int [] protectionAmounts;

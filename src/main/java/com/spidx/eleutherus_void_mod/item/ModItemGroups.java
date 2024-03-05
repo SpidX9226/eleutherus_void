@@ -17,6 +17,25 @@ public class ModItemGroups {
             new Identifier(Eleutherus_void_mod.MOD_ID, "eleutherus"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.eleutherus_void"))
                     .icon(() -> new ItemStack(ModItems.ELEUTHERUS)).entries((displayContext, entries) -> {
+
+                        entries.add(ModBlocks.TUNGSTEN_DEBRIS);
+                        entries.add(ModBlocks.TUNGSTEN_ORE);
+                        entries.add(ModBlocks.RAW_TUNGSTEN_BLOCK);
+                        entries.add(ModBlocks.TUNGSTEN_BLOCK);
+
+                        entries.add(ModItems.TUNGSTEN_INGOT);
+                        entries.add(ModItems.TUNGSTEN_UPGRADE_SMITHING_TEMPLATE);
+
+                        entries.add(ModItems.TUNGSTEN_PICKAXE);
+                        entries.add(ModItems.TUNGSTEN_SWORD);
+                        entries.add(ModItems.TUNGSTEN_AXE);
+                        entries.add(ModItems.TUNGSTEN_SHOVEL);
+                        entries.add(ModItems.TUNGSTEN_HOE);
+                        entries.add(ModItems.TUNGSTEN_HELMET);
+                        entries.add(ModItems.TUNGSTEN_CHESTPLATE);
+                        entries.add(ModItems.TUNGSTEN_LEGGINGS);
+                        entries.add(ModItems.TUNGSTEN_BOOTS);
+
                         entries.add(ModBlocks.ELEUTHERUS_ORE);
                         entries.add(ModItems.ELEUTHERUS);
                         entries.add(ModBlocks.ELEUTHERUS_BLOCK);

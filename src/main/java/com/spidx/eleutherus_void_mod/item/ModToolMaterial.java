@@ -9,7 +9,11 @@ public enum ModToolMaterial implements ToolMaterial {
     ELEUTHERUS(5,2557,10f,4.5f,17,
             () -> Ingredient.ofItems(ModItems.ELEUTHERUS)),
     VOID(7,5555,22f,7.5f,50,
-                       () -> Ingredient.ofItems(ModItems.ELEUTHERUS));
+                       () -> Ingredient.ofItems(ModItems.ELEUTHERUS)),
+    TUNGSTEN(5,2557,10f,4.5f,17,
+                     () -> Ingredient.ofItems(ModItems.TUNGSTEN_INGOT)),
+    TUNGSTENF(5,2557,10f,4f,17,
+                      () -> Ingredient.ofItems(ModItems.TUNGSTEN_INGOT));
 
     private final int miningLevel;
     private final int itemDurability;

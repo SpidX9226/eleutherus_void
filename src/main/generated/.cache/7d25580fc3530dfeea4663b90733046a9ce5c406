@@ -1,4 +1,4 @@
-// 1.20.4	2024-02-24T21:06:40.9276481	Eleutherus_void_mod/Block Loot Tables
+// 1.20.4	2024-03-05T17:39:16.5607121	Eleutherus_void_mod/Block Loot Tables
 aa43e72ad5a25062d24aaa8ab333516014369874 data\eleutherus_void_mod\loot_tables\blocks\eleutherus_wood.json
 2cac02d14828c1bd056731036cd2e8e528953271 data\eleutherus_void_mod\loot_tables\blocks\void_sapling.json
 24942879c4470a253605a2888c530f6a9be09503 data\eleutherus_void_mod\loot_tables\blocks\void_wood.json
@@ -19,8 +19,8 @@ a80e429c40943236f5af70a681965ef23422a272 data\eleutherus_void_mod\loot_tables\bl
 5d5678c0ae6c9d2f1c9064cc5392f017868a7998 data\eleutherus_void_mod\loot_tables\blocks\eleutherus_button.json
 66d19615b282e2e4e1b3103a74e40184a2846685 data\eleutherus_void_mod\loot_tables\blocks\void_button.json
 9568b380617db36f61762d01262669ed1eff9404 data\eleutherus_void_mod\loot_tables\blocks\void_door.json
-cbef9075fe2050c6c5503cfbdbcf1692f00f672f data\eleutherus_void_mod\loot_tables\blocks\stripped_void_wood.json
 2d35a387f2c13f3162ff3d9e1532c4c97099189c data\eleutherus_void_mod\loot_tables\blocks\eleutherus_wart.json
+cbef9075fe2050c6c5503cfbdbcf1692f00f672f data\eleutherus_void_mod\loot_tables\blocks\stripped_void_wood.json
 2b5147262e0e14366964e7930c53eeda096020fb data\eleutherus_void_mod\loot_tables\blocks\void_sand.json
 a95d9cc64eee49aad5f18beb9c3435d0a67e7b0a data\eleutherus_void_mod\loot_tables\blocks\void_leaves.json
 0a7e66a2441bed71f17b3145028ec5aeae6daa63 data\eleutherus_void_mod\loot_tables\blocks\void_pressure_plate.json

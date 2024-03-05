@@ -43,8 +43,9 @@ public class Eleutherus_void_modClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.VOID_ALBINO,
                 VoidAlbinoRender::new);
-        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.VOID_ALBINO, VoidAlbinoModel::getTexturesModelData);
 
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.VOID_ALBINO,
+                VoidAlbinoModel::getTexturesModelData);
     }
 
 }

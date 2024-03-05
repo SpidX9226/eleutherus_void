@@ -73,9 +73,36 @@
   "block.eleutherus_void_mod.void_sandstone_wall": "Void sandstone wall",
   "block.eleutherus_void_mod.smooth_void_sandstone_stairs": "Smooth void sandstone stairs",
   "block.eleutherus_void_mod.cut_void_sandstone_slab": "Cut void sandstone slab",
+  "block.eleutherus_void_mod.void_petals": "Void petals",
+
   "block.eleutherus_void_mod.void_bush": "Void bush",
+  "block.eleutherus_void_mod.void_nylium": "Void nylium",
+  "block.eleutherus_void_mod.void_sapling": "Void sapling",
+  "block.eleutherus_void_mod.random_ore_block": "Random ore",
 
   "item.eleutherus_void_mod.void_albino_spawn_egg": "Void albino spawn egg",
+  "item.eleutherus_void_mod.moon_opal": "Moon opal",
+  "item.eleutherus_void_mod.void_albino_pearl": "Void albino pearl",
+
   "item.eleutherus_void_mod.void_katana": "Moon katana",
-  "item.eleutherus_void_mod.void_reaver_flamberge": "Void reaver flamberge"
+  "item.eleutherus_void_mod.void_reaver_flamberge": "Void reaver flamberge",
+
+  "item.eleutherus_void_mod.tungsten_ingot": "Tungsten ingot",
+  "item.eleutherus_void_mod.raw_tungsten": "Tungsten ingot",
+  "item.eleutherus_void_mod.tungsten_helmet": "Tungsten helmet",
+  "item.eleutherus_void_mod.tungsten_chestplate": "Tungsten chestplate",
+  "item.eleutherus_void_mod.tungsten_leggings": "Tungsten leggings",
+  "item.eleutherus_void_mod.tungsten_boots": "Tungsten boots",
+  "item.eleutherus_void_mod.tungsten_upgrade_smithing_template": "Tungsten upgrade smithing template",
+  "item.eleutherus_void_mod.tungsten_sword": "Tungsten sword",
+  "item.eleutherus_void_mod.tungsten_pickaxe": "Tungsten pickaxe",
+  "item.eleutherus_void_mod.tungsten_axe": "Tungsten axe",
+  "item.eleutherus_void_mod.tungsten_shovel": "Tungsten shovel",
+  "item.eleutherus_void_mod.tungsten_hoe": "Tungsten hoe",
+  "item.eleutherus_void_mod.tungsten_scrap": "Tungsten scrap",
+
+  "block.eleutherus_void_mod.raw_tungsten_block": "Raw tungsten block",
+  "block.eleutherus_void_mod.tungsten_block": "Tungsten block",
+  "block.eleutherus_void_mod.deepslate_tungsten_ore": "Deepslate tungsten ore",
+  "block.eleutherus_void_mod.tungsten_debris": "Tungsten debris"
 }

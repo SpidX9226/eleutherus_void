@@ -6,16 +6,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.render.entity.feature.EndermanEyesFeatureRenderer;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.mob.EndermanEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
-
-import net.minecraft.client.render.*;
-import net.minecraft.client.gl.JsonEffectShaderProgram;
-import net.minecraft.client.gl.EffectShaderStage;
-import net.minecraft.util.Identifier;
-
 
 
 public class VoidAlbinoRender extends MobEntityRenderer<VoidAlbino, VoidAlbinoModel<VoidAlbino>>{
@@ -31,19 +27,19 @@ public class VoidAlbinoRender extends MobEntityRenderer<VoidAlbino, VoidAlbinoMo
     @Override
     public void render(VoidAlbino voidAlbino, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
         BlockState blockState = voidAlbino.getCarriedBlock();
-        VoidAlbinoModel<VoidAlbino> voidAlbinoModel = (VoidAlbinoModel<VoidAlbino>)this.getModel();
+        VoidAlbinoModel voidAlbinoModel = (VoidAlbinoModel) this.getModel();
         voidAlbinoModel.carryingBlock = blockState != null;
         voidAlbinoModel.angry = voidAlbino.isAngry();
         super.render(voidAlbino, f, g, matrixStack, vertexConsumerProvider, i);
     }
 
     @Override
-    public Vec3d getPositionOffset(VoidAlbino entity, float f) {
-        if (entity.isAngry()) {
+    public Vec3d getPositionOffset(VoidAlbino voidAlbinoModel, float f) {
+        if (voidAlbinoModel.isAngry()) {
             double d = 0.02;
             return new Vec3d(this.random.nextGaussian() * 0.02, 0.0, this.random.nextGaussian() * 0.02);
         }
-        return super.getPositionOffset(entity, f);
+        return super.getPositionOffset(voidAlbinoModel, f);
     }
 
     @Override

@@ -1,11 +1,11 @@
-// 1.20.4	2024-02-24T21:06:40.9251333	Eleutherus_void_mod/Tags for minecraft:block
+// 1.20.4	2024-03-05T17:39:16.5607121	Eleutherus_void_mod/Tags for minecraft:block
 9f92456c463ac6c154bd56a43d8eb5c868d5e86c data\fabric\tags\blocks\needs_tool_level_5.json
-a08f37af0c309b65598fd02e74b5aacdd4e041a4 data\minecraft\tags\blocks\dirt.json
+589b747261c157312194c9c017f177942bf4a97b data\minecraft\tags\blocks\dirt.json
 0b0e08323128d714825bd8a67678d306a3422023 data\minecraft\tags\blocks\mineable\pickaxe.json
 0d4c4614be8cdf8e6ddcc92e135b9bcc7fa025dc data\minecraft\tags\blocks\walls.json
 c0fb9573f2bb1a9c71309ee59fe6ff0cc0f10320 data\minecraft\tags\blocks\planks.json
 8c7e10eb640a24321ca7c3398928f81c7a88909f data\fabric\tags\blocks\needs_tool_level_4.json
-0c8ed5b6d23d5f277623e548d3c047f31c7e6b9a data\minecraft\tags\blocks\logs.json
 88354fd65456fd5c35b4d9294acde56e09356d48 data\minecraft\tags\blocks\fences.json
-6c6065b85835301d13b19cdc01add4208b28814a data\minecraft\tags\blocks\beacon_base_blocks.json
+acd441b5ef7178103ea6a6a6a2b6fb41335cb5b6 data\minecraft\tags\blocks\logs.json
+f541889338222c3e0f57d905ad1318f3f92d7625 data\minecraft\tags\blocks\beacon_base_blocks.json
 bc635cc6c57d0b9caf52347533815f6ac82ba31c data\minecraft\tags\blocks\fence_gates.json

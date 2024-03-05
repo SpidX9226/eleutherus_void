@@ -34,10 +34,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.RANDOM_ORE_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
-                .add(ModBlocks.ELEUTHERUS_BLOCK);
+                .add(ModBlocks.ELEUTHERUS_BLOCK)
+                .add(ModBlocks.TUNGSTEN_BLOCK)
+        ;
 
         getOrCreateTagBuilder(BlockTags.LOGS)
-                .add(ModBlocks.VOID_LOG);
+                .add(ModBlocks.VOID_LOG)
+                .add(ModBlocks.ELEUTHERUS_LOG)
+        ;
 
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(ModBlocks.ELEUTHERUS_PLANKS)

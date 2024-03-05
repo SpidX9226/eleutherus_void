@@ -2,8 +2,12 @@
   "replace": false,
   "values": [
     "eleutherus_void_mod:eleutherus_helmet",
+    "eleutherus_void_mod:tungsten_helmet",
     "eleutherus_void_mod:eleutherus_chestplate",
+    "eleutherus_void_mod:tungsten_chestplate",
     "eleutherus_void_mod:eleutherus_leggings",
-    "eleutherus_void_mod:eleutherus_boots"
+    "eleutherus_void_mod:tungsten_leggings",
+    "eleutherus_void_mod:eleutherus_boots",
+    "eleutherus_void_mod:tungsten_boots"
   ]
 }

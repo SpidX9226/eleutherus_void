@@ -23,6 +23,18 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
 
+    public static final Block TUNGSTEN_DEBRIS = registerBlock("tungsten_debris",
+            new Block(FabricBlockSettings.copyOf(Blocks.ANCIENT_DEBRIS)));
+
+    public static final Block TUNGSTEN_ORE = registerBlock("deepslate_tungsten_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(4, 7), FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE)));
+
+    public static final Block RAW_TUNGSTEN_BLOCK = registerBlock("raw_tungsten_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.RAW_GOLD_BLOCK)));
+
+    public static final Block TUNGSTEN_BLOCK = registerBlock("tungsten_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
+
     public static final Block ELEUTHERUS_BLOCK = registerBlock("eleutherus_block",
             new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK).lightLevel(s -> 7)));
 

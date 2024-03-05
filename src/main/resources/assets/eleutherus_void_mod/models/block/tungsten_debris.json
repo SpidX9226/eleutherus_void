@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "eleutherus_void_mod:block/tungsten_debris_top",
+    "side": "eleutherus_void_mod:block/tungsten_debris_side"
+  }
+}

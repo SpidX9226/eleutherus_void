@@ -16,8 +16,10 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-                    .put(ModArmorMaterials.ELEUTHERUS, new StatusEffectInstance(StatusEffects.SPEED, 400, 1,
-                            false, false, true)).build();
+                    .put(ModArmorMaterials.ELEUTHERUS, new StatusEffectInstance(StatusEffects.SATURATION, 400, 1,
+                            false, false, true))
+                    .put(ModArmorMaterials.TUNGSTEN, new StatusEffectInstance(StatusEffects.SPEED, 400, 0,
+            false, false, true)).build();
 
     public ModArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);

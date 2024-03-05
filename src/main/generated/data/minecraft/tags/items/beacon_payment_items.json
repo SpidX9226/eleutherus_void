@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "eleutherus_void_mod:eleutherus"
+    "eleutherus_void_mod:eleutherus",
+    "eleutherus_void_mod:tungsten_ingot"
   ]
 }

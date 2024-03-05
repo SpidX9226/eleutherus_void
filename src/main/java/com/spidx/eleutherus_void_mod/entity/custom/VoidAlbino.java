@@ -86,29 +86,30 @@ public class VoidAlbino extends HostileEntity
     @Nullable
     private UUID angryAt;
 
-    public VoidAlbino(EntityType<? extends VoidAlbino> entityType, World world) {
-        super((EntityType<? extends HostileEntity>) entityType, world);
+    public VoidAlbino(EntityType<? extends HostileEntity> entityType, World world) {
+        super(entityType, world);
         this.setStepHeight(1.0f);
     }
 
+
     @Override
     public boolean canWalkOnFluid(FluidState state) {
-        return state.isIn(FluidTags.WATER) && state.isIn(FluidTags.LAVA);
+        return state.isIn(FluidTags.WATER);
     }
 
     @Override
     protected void initGoals() {
         this.goalSelector.add(1, new VoidAlbino.ChasePlayerGoal(this));
         this.goalSelector.add(2, new MeleeAttackGoal(this, 1.0, false));
-        this.goalSelector.add(7, new WanderAroundFarGoal((PathAwareEntity) this, 1.0, 0.0f));
+        this.goalSelector.add(7, new WanderAroundFarGoal(this, 1.0, 0.0f));
         this.goalSelector.add(8, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
         this.goalSelector.add(8, new LookAroundGoal(this));
         this.goalSelector.add(10, new VoidAlbino.PlaceBlockGoal(this));
         this.goalSelector.add(11, new VoidAlbino.PickUpBlockGoal(this));
         this.targetSelector.add(1, new VoidAlbino.TeleportTowardsPlayerGoal(this, this::shouldAngerAt));
-        this.targetSelector.add(2, new RevengeGoal(this, new Class[0]));
-        this.targetSelector.add(3, new ActiveTargetGoal<VoidAlbino>((MobEntity) this, VoidAlbino.class, true, false));
-        this.targetSelector.add(4, new UniversalAngerGoal<VoidAlbino>(this, false));
+        this.targetSelector.add(2, new RevengeGoal(this));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, VoidAlbino.class, true, false));
+        this.targetSelector.add(4, new UniversalAngerGoal<>(this, false));
     }
 
     public static DefaultAttributeContainer.Builder createEndermanAttributes() {
@@ -123,10 +124,12 @@ public class VoidAlbino extends HostileEntity
             this.ageWhenTargetSet = 0;
             this.dataTracker.set(ANGRY, false);
             this.dataTracker.set(PROVOKED, false);
+            assert entityAttributeInstance != null;
             entityAttributeInstance.removeModifier(ATTACKING_SPEED_BOOST.getId());
         } else {
             this.ageWhenTargetSet = this.age;
             this.dataTracker.set(ANGRY, true);
+            assert entityAttributeInstance != null;
             if (!entityAttributeInstance.hasModifier(ATTACKING_SPEED_BOOST)) {
                 entityAttributeInstance.addTemporaryModifier(ATTACKING_SPEED_BOOST);
             }

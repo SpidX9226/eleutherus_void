@@ -12,14 +12,27 @@ import com.spidx.eleutherus_void_mod.util.ModLootTableModifiers;
 import com.spidx.eleutherus_void_mod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.PlacedFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Eleutherus_void_mod implements ModInitializer {
 	public static final String MOD_ID = "eleutherus_void_mod";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	public static final RegistryKey<PlacedFeature> ORE_TUNGSTEN_SMALL = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(Eleutherus_void_mod.MOD_ID,"ore_tungsten_small"));
+	public static final RegistryKey<PlacedFeature> ORE_TUNGSTEN_MEDIUM = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(Eleutherus_void_mod.MOD_ID,"ore_tungsten_medium"));
+	public static final RegistryKey<PlacedFeature> ORE_TUNGSTEN_LARGE = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(Eleutherus_void_mod.MOD_ID,"ore_tungsten_large"));
+	public static final RegistryKey<PlacedFeature> ORE_TUNGSTEN_BURIED = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(Eleutherus_void_mod.MOD_ID,"ore_tungsten_buried"));
+
 
 	@Override
 	public void onInitialize() {
@@ -37,6 +50,11 @@ public class Eleutherus_void_mod implements ModInitializer {
 		ModEnchantments.registerModEnchantments();
 		ModParticles.registerParticles();
 		ModPainting.registerPaintings();
+
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_TUNGSTEN_SMALL);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_TUNGSTEN_MEDIUM);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_TUNGSTEN_LARGE);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_TUNGSTEN_BURIED);
 
 		ModWorldGeneration.generateModWorldGen();
 

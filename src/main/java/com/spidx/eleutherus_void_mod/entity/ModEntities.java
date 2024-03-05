@@ -3,6 +3,7 @@ package com.spidx.eleutherus_void_mod.entity;
 import com.spidx.eleutherus_void_mod.Eleutherus_void_mod;
 import com.spidx.eleutherus_void_mod.entity.custom.VoidAlbino;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.client.render.entity.EndermanEntityRenderer;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;

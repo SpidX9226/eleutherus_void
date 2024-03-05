@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "eleutherus_void_mod:tungsten_ingot"
+  },
+  "base": {
+    "item": "minecraft:iron_shovel"
+  },
+  "result": {
+    "item": "eleutherus_void_mod:tungsten_shovel"
+  },
+  "template": {
+    "item": "eleutherus_void_mod:tungsten_upgrade_smithing_template"
+  }
+}

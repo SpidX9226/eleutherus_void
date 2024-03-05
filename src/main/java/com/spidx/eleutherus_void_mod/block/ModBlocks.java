@@ -36,57 +36,57 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
 
     public static final Block ELEUTHERUS_BLOCK = registerBlock("eleutherus_block",
-            new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK).lightLevel(s -> 7)));
+            new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).strength(52.0f, 1300.0f).luminance(s -> 7)));
 
     public static final Block ELEUTHERUS_ORE = registerBlock("eleutherus_ore",
-            new ExperienceDroppingBlock(UniformIntProvider.create(6, 8), FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).lightLevel(s -> 5).sounds(BlockSoundGroup.STONE)));
+            new ExperienceDroppingBlock(UniformIntProvider.create(6, 8), FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).luminance(s -> 5).sounds(BlockSoundGroup.STONE)));
     public static final Block ELEUTHERUS_PLANKS = registerBlock("eleutherus_planks",
-            new Block(FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).lightLevel(s -> 5)));
+            new Block(FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).luminance(s -> 5)));
 
     public static final Block RANDOM_ORE_BLOCK = registerBlock("random_ore_block",
-            new ExperienceDroppingBlock(UniformIntProvider.create(10, 12), FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).lightLevel(s -> 5).sounds(BlockSoundGroup.STONE)));
+            new ExperienceDroppingBlock(UniformIntProvider.create(10, 12), FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).luminance(s -> 5).sounds(BlockSoundGroup.STONE)));
 
     public static final Block ELEUTHERUS_STAIRS = registerBlock("eleutherus_stairs",
-            new StairsBlock(ModBlocks.ELEUTHERUS_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).lightLevel(s -> 5)));
+            new StairsBlock(ModBlocks.ELEUTHERUS_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).luminance(s -> 5)));
     public static final Block ELEUTHERUS_SLAB = registerBlock("eleutherus_slab",
-            new SlabBlock(FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).lightLevel(s -> 5)));
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).luminance(s -> 5)));
 
     public static final Block ELEUTHERUS_BUTTON = registerBlock("eleutherus_button",
-            new ButtonBlock(BlockSetType.WARPED, 10, FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).lightLevel(s -> 5)));
+            new ButtonBlock(BlockSetType.WARPED, 10, FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).luminance(s -> 5)));
     public static final Block ELEUTHERUS_PRESSURE_PLATE = registerBlock("eleutherus_pressure_plate",
-            new PressurePlateBlock(BlockSetType.WARPED,FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).lightLevel(s -> 5)));
+            new PressurePlateBlock(BlockSetType.WARPED,FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).luminance(s -> 5)));
 
     public static final Block ELEUTHERUS_FENCE = registerBlock("eleutherus_fence",
-            new FenceBlock(FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).lightLevel(s -> 5)));
+            new FenceBlock(FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).luminance(s -> 5)));
     public static final Block ELEUTHERUS_FENCE_GATE = registerBlock("eleutherus_fence_gate",
-            new FenceGateBlock(WoodType.WARPED ,FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).lightLevel(s -> 5)));
+            new FenceGateBlock(WoodType.WARPED ,FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).luminance(s -> 5)));
 
     public static final Block ELEUTHERUS_DOOR = registerBlock("eleutherus_door",
-            new DoorBlock(BlockSetType.WARPED, FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).nonOpaque().lightLevel(s -> 5)));
+            new DoorBlock(BlockSetType.WARPED, FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).nonOpaque().luminance(s -> 5)));
 
     public static final Block ELEUTHERUS_TRAPDOOR = registerBlock("eleutherus_trapdoor",
-            new TrapdoorBlock(BlockSetType.WARPED, FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).nonOpaque().lightLevel(s -> 5)));
+            new TrapdoorBlock(BlockSetType.WARPED, FabricBlockSettings.copyOf(Blocks.WARPED_PLANKS).nonOpaque().luminance(s -> 5)));
 
     public static final Block ELEUTHERUS_LOG = registerBlock("eleutherus_log",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.WARPED_STEM).lightLevel(s -> 5)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.WARPED_STEM).luminance(s -> 5)));
     public static final Block ELEUTHERUS_WOOD = registerBlock("eleutherus_wood",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.WARPED_STEM).lightLevel(s -> 5)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.WARPED_STEM).luminance(s -> 5)));
     public static final Block STRIPPED_ELEUTHERUS_LOG = registerBlock("stripped_eleutherus_log",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_WARPED_STEM).lightLevel(s -> 5)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_WARPED_STEM).luminance(s -> 5)));
     public static final Block STRIPPED_ELEUTHERUS_WOOD = registerBlock("stripped_eleutherus_wood",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_WARPED_STEM).lightLevel(s -> 5)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_WARPED_STEM).luminance(s -> 5)));
 
     public static final Block ELEUTHERUS_WART = registerBlock("eleutherus_wart",
-            new Eleutherus_wart_block(FabricBlockSettings.copyOf(Blocks.WARPED_WART_BLOCK).lightLevel(s -> 5)));
+            new Eleutherus_wart_block(FabricBlockSettings.copyOf(Blocks.WARPED_WART_BLOCK).luminance(s -> 5)));
 
     public static final Block VOID_LOG = registerBlock("void_log",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_LOG).lightLevel(s -> 1)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_LOG).luminance(s -> 1)));
     public static final Block VOID_WOOD = registerBlock("void_wood",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_WOOD).lightLevel(s -> 1)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_WOOD).luminance(s -> 1)));
     public static final Block STRIPPED_VOID_LOG = registerBlock("stripped_void_log",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CHERRY_LOG).lightLevel(s -> 1)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CHERRY_LOG).luminance(s -> 1)));
     public static final Block STRIPPED_VOID_WOOD = registerBlock("stripped_void_wood",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CHERRY_WOOD).lightLevel(s -> 1)));
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CHERRY_WOOD).luminance(s -> 1)));
 
     public static final Block VOID_SAPLING = registerBlock("void_sapling",
             new SaplingBlock(ModSaplingGenerators.VOID, FabricBlockSettings.copyOf(Blocks.CHERRY_SAPLING)));
@@ -133,25 +133,25 @@ public class ModBlocks {
             new VoidLeavesBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_LEAVES)));
 
     public static final Block VOID_STAIRS = registerBlock("void_stairs",
-            new StairsBlock(ModBlocks.VOID_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));
+            new StairsBlock(ModBlocks.VOID_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).luminance(s -> 5)));
     public static final Block VOID_SLAB = registerBlock("void_slab",
-            new SlabBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).luminance(s -> 5)));
 
     public static final Block VOID_BUTTON = registerBlock("void_button",
-            new ButtonBlock(BlockSetType.CHERRY, 10, FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));
+            new ButtonBlock(BlockSetType.CHERRY, 10, FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).luminance(s -> 5)));
     public static final Block VOID_PRESSURE_PLATE = registerBlock("void_pressure_plate",
-            new PressurePlateBlock(BlockSetType.CHERRY,FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));
+            new PressurePlateBlock(BlockSetType.CHERRY,FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).luminance(s -> 5)));
 
     public static final Block VOID_FENCE = registerBlock("void_fence",
-            new FenceBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));
+            new FenceBlock(FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).luminance(s -> 5)));
     public static final Block VOID_FENCE_GATE = registerBlock("void_fence_gate",
-            new FenceGateBlock(WoodType.CHERRY ,FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));
+            new FenceGateBlock(WoodType.CHERRY ,FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).luminance(s -> 5)));
 
     public static final Block VOID_DOOR = registerBlock("void_door",
-            new DoorBlock(BlockSetType.CHERRY, FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).lightLevel(s -> 5)));
+            new DoorBlock(BlockSetType.CHERRY, FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).luminance(s -> 5)));
 
     public static final Block VOID_TRAPDOOR = registerBlock("void_trapdoor",
-            new TrapdoorBlock(BlockSetType.CHERRY, FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).nonOpaque().lightLevel(s -> 5)));
+            new TrapdoorBlock(BlockSetType.CHERRY, FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).nonOpaque().luminance(s -> 5)));
 
     public static final Identifier VOID_SIGN_TEXTURE = new Identifier(Eleutherus_void_mod.MOD_ID, "entity/signs/void");
     public static final Identifier VOID_HANGING_SIGN_TEXTURE = new Identifier(Eleutherus_void_mod.MOD_ID, "entity/signs/hanging/void");

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "eleutherus_void_mod:block/eleutherus_lantern"
+    },
+    "hanging=true": {
+      "model": "eleutherus_void_mod:block/eleutherus_lantern_hanging"
+    }
+  }
+}

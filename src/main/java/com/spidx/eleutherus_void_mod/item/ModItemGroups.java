@@ -2,6 +2,7 @@ package com.spidx.eleutherus_void_mod.item;
 
 import com.spidx.eleutherus_void_mod.Eleutherus_void_mod;
 import com.spidx.eleutherus_void_mod.block.ModBlocks;
+import com.spidx.eleutherus_void_mod.fluid.ModFluids;
 import com.spidx.eleutherus_void_mod.painting.ModPainting;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemConvertible;
@@ -68,6 +69,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.ELEUTHERUS_FENCE_GATE);
                         entries.add(ModBlocks.ELEUTHERUS_BUTTON);
                         entries.add(ModBlocks.ELEUTHERUS_PRESSURE_PLATE);
+                        entries.add(ModBlocks.ELEUTHERUS_LANTERN);
 
                         entries.add(ModItems.ELEUTHERUS_SIGN);
                         entries.add(ModItems.HANGING_ELEUTHERUS_SIGN);
@@ -115,6 +117,10 @@ public class ModItemGroups {
                         entries.add(ModItems.VOID_DESTROYER_BLADE);
                         entries.add(ModItems.VOID_REAVER_FLAMBERGE);
                         entries.add(ModItems.VOID_KATANA);
+
+                        entries.add(ModItems.VOID_FLAMBERGE);
+
+                        entries.add(ModFluids.PORTAL_FLUID_BUCKET);
 
                     }).build());
     public static void registerItemGroups(){

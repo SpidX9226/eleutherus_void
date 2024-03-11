@@ -82,6 +82,12 @@ public class ModItems {
     public static final Item ELEUTHERUS_SWORD = registerItem("eleutherus_sword",
             new SwordItem(ModToolMaterial.ELEUTHERUS, 3, -2.2f, new FabricItemSettings()));
 
+    public static final Item VOID_FLAMBERGE = registerItem("eleutherus_flamberge",
+            new SwordItem(ModToolMaterial.ELEUTHERUS, 5, -2.2f, new FabricItemSettings()));
+
+    public static final Item VOID_KATANA = registerItem("eleutherus_katan",
+            new SwordItem(ModToolMaterial.ELEUTHERUS, 4, -2, new FabricItemSettings()));
+
     public static final Item ELEUTHERUS_AXE = registerItem("eleutherus_axe",
             new AxeItem(ModToolMaterial.ELEUTHERUS, 5, -2.8f, new FabricItemSettings()));
 
@@ -119,7 +125,7 @@ public class ModItems {
     public static final Item VOID_REAVER_FLAMBERGE = registerItem("void_reaver_flamberge",
             new PickaxeItem(ModToolMaterial.VOID, 5, -2.2f, new FabricItemSettings().rarity(Rarity.EPIC)));
 
-    public static final Item VOID_KATANA = registerItem("void_katana",
+    public static final Item VOID_KATANA_ = registerItem("void_katana",
             new PickaxeItem(ModToolMaterial.VOID, 5, -2.2f, new FabricItemSettings().rarity(Rarity.EPIC)));
 
     public static Item registerItem(String name, Item item){

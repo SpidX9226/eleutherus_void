@@ -36,7 +36,7 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
 
     public static final Block ELEUTHERUS_BLOCK = registerBlock("eleutherus_block",
-            new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).strength(52.0f, 1300.0f).luminance(s -> 7)));
+            new EndPortalBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).strength(52.0f, 1300.0f).luminance(s -> 7)));
 
     public static final Block ELEUTHERUS_ORE = registerBlock("eleutherus_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(6, 8), FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).luminance(s -> 5).sounds(BlockSoundGroup.STONE)));
@@ -152,6 +152,9 @@ public class ModBlocks {
 
     public static final Block VOID_TRAPDOOR = registerBlock("void_trapdoor",
             new TrapdoorBlock(BlockSetType.CHERRY, FabricBlockSettings.copyOf(Blocks.CHERRY_PLANKS).nonOpaque().luminance(s -> 5)));
+
+    public static final Block ELEUTHERUS_LANTERN = registerBlock("eleutherus_lantern",
+            new LanternBlock(FabricBlockSettings.copyOf(Blocks.SOUL_LANTERN)));
 
     public static final Identifier VOID_SIGN_TEXTURE = new Identifier(Eleutherus_void_mod.MOD_ID, "entity/signs/void");
     public static final Identifier VOID_HANGING_SIGN_TEXTURE = new Identifier(Eleutherus_void_mod.MOD_ID, "entity/signs/hanging/void");

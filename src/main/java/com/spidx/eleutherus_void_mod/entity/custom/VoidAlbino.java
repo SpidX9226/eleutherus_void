@@ -2,7 +2,7 @@ package com.spidx.eleutherus_void_mod.entity.custom;
 
 import com.mojang.datafixers.types.templates.Tag;
 import com.spidx.eleutherus_void_mod.particle.ModParticles;
-import com.spidx.eleutherus_void_mod.util.ModEntityGroup;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -594,9 +594,9 @@ public class VoidAlbino extends HostileEntity
         }
     }
 
-    @Override
-    public ModEntityGroup getGroup() {
-        return ModEntityGroup.VOID;
-    }
+//    @Override
+//    public ModEntityGroup getGroup() {
+//        return ModEntityGroup.VOID;
+//    }
 
 }

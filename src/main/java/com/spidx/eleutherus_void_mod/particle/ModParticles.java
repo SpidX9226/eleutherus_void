@@ -16,11 +16,14 @@ import net.minecraft.util.Identifier;
 public class ModParticles {
     public static final DefaultParticleType VOID_LEAVES_PARTICLE = FabricParticleTypes.simple();
     public static final DefaultParticleType VOID_ALBINO_PARTICLE = FabricParticleTypes.simple();
+    public static final DefaultParticleType MOON_SWEEP = FabricParticleTypes.simple();
     protected ClientWorld world;
     public static void registerParticles(){
         Registry.register(Registries.PARTICLE_TYPE, new Identifier(Eleutherus_void_mod.MOD_ID, "void_leaves_particle"),
                 VOID_LEAVES_PARTICLE);
         Registry.register(Registries.PARTICLE_TYPE, new Identifier(Eleutherus_void_mod.MOD_ID, "void_albino_particle"),
                 VOID_ALBINO_PARTICLE);
+        Registry.register(Registries.PARTICLE_TYPE, new Identifier(Eleutherus_void_mod.MOD_ID, "moon_sweep"),
+                MOON_SWEEP);
     }
 }

@@ -4,6 +4,7 @@ import com.spidx.eleutherus_void_mod.block.ModBlocks;
 import com.spidx.eleutherus_void_mod.enchantments.ModEnchantments;
 import com.spidx.eleutherus_void_mod.entity.ModEntities;
 import com.spidx.eleutherus_void_mod.entity.custom.VoidAlbino;
+import com.spidx.eleutherus_void_mod.fluid.ModFluids;
 import com.spidx.eleutherus_void_mod.item.ModItemGroups;
 import com.spidx.eleutherus_void_mod.item.ModItems;
 import com.spidx.eleutherus_void_mod.painting.ModPainting;
@@ -23,6 +24,7 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.bernie.geckolib.GeckoLib;
 
 public class Eleutherus_void_mod implements ModInitializer {
 	public static final String MOD_ID = "eleutherus_void_mod";
@@ -50,6 +52,7 @@ public class Eleutherus_void_mod implements ModInitializer {
 		ModEnchantments.registerModEnchantments();
 		ModParticles.registerParticles();
 		ModPainting.registerPaintings();
+		ModFluids.register();
 
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_TUNGSTEN_SMALL);
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_TUNGSTEN_MEDIUM);
@@ -59,5 +62,7 @@ public class Eleutherus_void_mod implements ModInitializer {
 		ModWorldGeneration.generateModWorldGen();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.VOID_ALBINO, VoidAlbino.createEndermanAttributes());
+
+		GeckoLib.initialize();
 	}
 }

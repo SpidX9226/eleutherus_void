@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values":
+  [
+    "eleutherus_void_mod:portal_fluid",
+    "eleutherus_void_mod:flowing_portal_fluid"
+  ]
+}
